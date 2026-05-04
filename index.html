@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--
+  index.html  =  サイトのトップページ
+  ここに最初に表示される内容を書いています。
+  教材を増やしたい時は、下の方の「教材カード一覧」エリアにカードを追加してください。
+-->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <!-- スマホでも正しい大きさで表示するためのおまじない -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人生の知恵の本棚</title>
+  <meta name="description" content="父から子へ、人生で本当に大切な知恵を残していく学びの図書館。">
+  <!-- 共通のデザイン(CSS)を読み込み -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー(画面の一番上) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title"><a href="index.html">人生の知恵の本棚</a></h1>
+      <p class="site-subtitle">学校では教わらないけれど、生きていくうえで本当に大切なことを、必要な時に取り出せる場所。</p>
+      <!-- ナビゲーション(ページ移動メニュー) -->
+      <nav class="site-nav">
+        <a href="index.html">本棚トップ</a>
+        <a href="about.html">この図書館について</a>
+        <a href="letter.html">父からテルへ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== サイトの説明 ===== -->
+    <section class="intro">
+      <p>
+        この本棚は、父から子へ、人生で本当に大切だと思う知恵を残していくための小さな図書館です。<br>
+        必要な時に、必要な一冊を、いつでも取り出せます。
+      </p>
+    </section>
+
+    <!-- ===== カテゴリー別の本棚 ===== -->
+    <section class="section">
+      <h2 class="section-title">カテゴリー別の本棚</h2>
+      <p class="section-lead">読みたいテーマから、本棚を選んでください。</p>
+      <!-- カテゴリーカード(7つの本棚) -->
+      <div class="category-grid">
+        <a class="category-card" href="#shelf-time">
+          <span class="category-icon">⏳</span>
+          <span class="category-name">時間の本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-self">
+          <span class="category-icon">🪞</span>
+          <span class="category-name">自分を知る本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-mind">
+          <span class="category-icon">🍃</span>
+          <span class="category-name">心を整える本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-relation">
+          <span class="category-icon">🤝</span>
+          <span class="category-name">人間関係の本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-money">
+          <span class="category-icon">💼</span>
+          <span class="category-name">お金と仕事の本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-luck">
+          <span class="category-icon">🍀</span>
+          <span class="category-name">運と人生の本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-read">
+          <span class="category-icon">📖</span>
+          <span class="category-name">読書の本棚</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== 最新の一冊 ===== -->
+    <section class="section">
+      <h2 class="section-title">最新の一冊</h2>
+      <div class="book-grid">
+        <!-- 教材カード(1冊) -->
+        <article class="book-card">
+          <span class="book-status status-open">公開中</span>
+          <p class="book-category">時間の本棚</p>
+          <h3 class="book-title">正しい投資としての時間の使い方</h3>
+          <p class="book-desc">時間は「消費・浪費・投資」に分けられる。同じ1時間でも、使い方と意識によって未来の自分を強くする時間に変えられる。</p>
+          <div class="book-actions">
+            <a class="btn btn-primary" href="lessons/time-investment.html">読む</a>
+            <a class="btn btn-secondary" href="assets/pdf/time-investment.pdf" target="_blank" rel="noopener">PDFを見る</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== おすすめの一冊 ===== -->
+    <section class="section">
+      <h2 class="section-title">おすすめの一冊</h2>
+      <div class="book-grid">
+        <article class="book-card">
+          <span class="book-status status-open">公開中</span>
+          <p class="book-category">時間の本棚</p>
+          <h3 class="book-title">正しい投資としての時間の使い方</h3>
+          <p class="book-desc">迷った時にまず読んでほしい一冊。時間の使い方が変われば、人生の景色が変わります。</p>
+          <div class="book-actions">
+            <a class="btn btn-primary" href="lessons/time-investment.html">読む</a>
+            <a class="btn btn-secondary" href="assets/pdf/time-investment.pdf" target="_blank" rel="noopener">PDFを見る</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 父からテルへの短いメッセージ ===== -->
+    <section class="section message-box">
+      <h2 class="section-title">父からテルへ</h2>
+      <p>
+        すぐに全部わからなくてもいい。<br>
+        今はピンとこないことも、いつか「あ、こういうことだったのか」と思える日が来るかもしれません。<br>
+        その時に、この本棚が少しでも役に立てば嬉しいです。
+      </p>
+      <p style="margin-top: 1rem;">
+        <a class="btn btn-primary" href="letter.html">手紙を読む</a>
+      </p>
+    </section>
+
+    <!-- ===== すべての教材(本棚別に表示) ===== -->
+    <!--
+      ★教材を追加する時は、ここに <article class="book-card"> ～ </article> を増やしてください。
+      ★該当する本棚の中に入れてください。
+    -->
+
+    <!-- 時間の本棚 -->
+    <section class="section shelf" id="shelf-time">
+      <h2 class="section-title">⏳ 時間の本棚</h2>
+      <div class="book-grid">
+        <article class="book-card">
+          <span class="book-status status-open">公開中</span>
+          <p class="book-category">時間の本棚</p>
+          <h3 class="book-title">正しい投資としての時間の使い方</h3>
+          <p class="book-desc">時間は「消費・浪費・投資」に分けられる。同じ1時間でも、使い方と意識によって未来の自分を強くする時間に変えられる。</p>
+          <div class="book-actions">
+            <a class="btn btn-primary" href="lessons/time-investment.html">読む</a>
+            <a class="btn btn-secondary" href="assets/pdf/time-investment.pdf" target="_blank" rel="noopener">PDFを見る</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 自分を知る本棚 -->
+    <section class="section shelf" id="shelf-self">
+      <h2 class="section-title">🪞 自分を知る本棚</h2>
+      <div class="book-grid">
+        <article class="book-card is-coming">
+          <span class="book-status status-coming">Coming soon</span>
+          <p class="book-category">自分を知る本棚</p>
+          <h3 class="book-title">自分にしかできないことの見つけ方</h3>
+          <p class="book-desc">得意なこと、好きなこと、人から求められることの重なりから、自分だけの役割を見つけていく学び。</p>
+          <div class="book-actions">
+            <span class="btn btn-disabled">準備中</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 心を整える本棚 -->
+    <section class="section shelf" id="shelf-mind">
+      <h2 class="section-title">🍃 心を整える本棚</h2>
+      <div class="book-grid">
+        <article class="book-card is-coming">
+          <span class="book-status status-coming">Coming soon</span>
+          <p class="book-category">心を整える本棚</p>
+          <h3 class="book-title">いただきますの本当の意味</h3>
+          <p class="book-desc">食事の前の一言に込められた、命・自然・作ってくれた人への感謝を学ぶ。</p>
+          <div class="book-actions">
+            <span class="btn btn-disabled">準備中</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 人間関係の本棚 -->
+    <section class="section shelf" id="shelf-relation">
+      <h2 class="section-title">🤝 人間関係の本棚</h2>
+      <div class="book-grid">
+        <article class="book-card is-coming">
+          <span class="book-status status-coming">Coming soon</span>
+          <p class="book-category">人間関係の本棚</p>
+          <h3 class="book-title">準備中の一冊</h3>
+          <p class="book-desc">これから少しずつ追加していきます。お楽しみに。</p>
+          <div class="book-actions">
+            <span class="btn btn-disabled">準備中</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- お金と仕事の本棚 -->
+    <section class="section shelf" id="shelf-money">
+      <h2 class="section-title">💼 お金と仕事の本棚</h2>
+      <div class="book-grid">
+        <article class="book-card is-coming">
+          <span class="book-status status-coming">Coming soon</span>
+          <p class="book-category">お金と仕事の本棚</p>
+          <h3 class="book-title">お金より先に信用を貯める</h3>
+          <p class="book-desc">社会に出て本当に大切になる「信用」という見えない財産について学ぶ。</p>
+          <div class="book-actions">
+            <span class="btn btn-disabled">準備中</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 運と人生の本棚 -->
+    <section class="section shelf" id="shelf-luck">
+      <h2 class="section-title">🍀 運と人生の本棚</h2>
+      <div class="book-grid">
+        <article class="book-card is-coming">
+          <span class="book-status status-coming">Coming soon</span>
+          <p class="book-category">運と人生の本棚</p>
+          <h3 class="book-title">運とは何か</h3>
+          <p class="book-desc">運はただの偶然ではなく、日々の行動・感謝・準備・人との関わりによって受け取れるもの。</p>
+          <div class="book-actions">
+            <span class="btn btn-disabled">準備中</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 読書の本棚 -->
+    <section class="section shelf" id="shelf-read">
+      <h2 class="section-title">📖 読書の本棚</h2>
+      <div class="book-grid">
+        <article class="book-card is-coming">
+          <span class="book-status status-coming">Coming soon</span>
+          <p class="book-category">読書の本棚</p>
+          <h3 class="book-title">読書は未来の自分への手紙</h3>
+          <p class="book-desc">本を読むことは、まだ経験していない人生を先に学ぶこと。読書を通じて視野を広げる。</p>
+          <div class="book-actions">
+            <span class="btn btn-disabled">準備中</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== フッター(画面の一番下) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 人生の知恵の本棚</p>
+    </div>
+  </footer>
+
+  <!-- 共通のJavaScript(動きをつけるためのもの)を読み込み -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
