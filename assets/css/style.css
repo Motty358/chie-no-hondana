@@ -1,29 +1,42 @@
-/* ===========================================
+/* ============================================================
    人生の知恵の本棚  共通スタイル(style.css)
-   ----------------------------------------------
-   ここでサイト全体の見た目(色・大きさ・余白)を決めています。
-   色を変えたい時は、下の「:root」の中の色コードを変えるだけでOKです。
-   =========================================== */
+   ----------------------------------------------------------
+   フェーズ1:昼モード(ヴィンテージ・ライブラリー)
+   フェーズ2:夜モード(エンジェリック・アーカイブ)を後から追加
+   ----------------------------------------------------------
+   色や雰囲気を変えたい時は、下の「:root」の中を変えるだけでOK
+   ============================================================ */
 
-/* ----- 基本の色を1か所にまとめておく ----- */
+/* ----- 基本の色を1か所にまとめる(昼モード) ----- */
 :root {
-  --color-bg:        #f5efe1;  /* 生成り色(背景) */
-  --color-paper:     #fbf6ea;  /* 本のページのような優しい白 */
-  --color-wood:      #8b5a2b;  /* 木目調の茶色 */
-  --color-wood-dark: #5a3a1c;  /* 濃い茶色(文字や見出し) */
-  --color-green:     #2f4a3a;  /* 深緑(差し色) */
-  --color-text:      #3b2f24;  /* 本文の色(深い茶) */
-  --color-muted:     #7a6a55;  /* 控えめな文字色 */
-  --color-line:      #d8c9a8;  /* 区切り線 */
-  --color-accent:    #b07a3b;  /* アクセントの茶 */
-  --color-coming:    #a08866;  /* Coming soon用 */
+  --color-bg-1:       #f5f0e3;  /* 背景上(明るい生成り) */
+  --color-bg-2:       #ede5d3;  /* 背景下(やや濃い生成り) */
+  --color-paper:      #fffcf5;  /* 本のページのような白 */
+  --color-paper-soft: rgba(255, 252, 245, 0.7);
+  --color-leaf:       #9bb088;  /* 葉っぱの緑 */
+  --color-leaf-dark:  #7a8a6a;  /* 葉っぱの濃い緑 */
+  --color-text:       #5a4a32;  /* 本文の色(深い茶) */
+  --color-text-soft:  #7a6a4a;  /* やや薄い文字色 */
+  --color-muted:      #8a7a5a;  /* 控えめな文字色 */
+  --color-border:     rgba(140, 120, 80, 0.2);
+  --color-border-strong: rgba(140, 120, 80, 0.4);
+  --color-accent:     #d96a5a;  /* アクセント(赤茶) */
+  --color-wood:       #a08560;  /* 木の色 */
+  --color-wood-dark:  #7a5a3a;  /* 濃い木の色 */
+  --color-coming:     rgba(140, 120, 80, 0.3);
 
-  --radius: 10px;
-  --shadow-soft: 0 2px 6px rgba(90, 58, 28, 0.12);
-  --shadow-book: 0 4px 12px rgba(90, 58, 28, 0.18);
+  --radius:      6px;
+  --radius-lg:   10px;
+  --shadow-soft: 0 2px 8px rgba(120, 100, 60, 0.08);
+  --shadow-card: 0 4px 12px rgba(120, 100, 60, 0.12);
+  --shadow-hover:0 8px 16px rgba(120, 100, 60, 0.18);
+
+  --font-script: 'Brush Script MT', 'Snell Roundhand', 'Apple Chancery', cursive;
+  --font-serif:  'Hiragino Mincho ProN', 'Yu Mincho', '游明朝', 'Noto Serif JP', serif;
+  --font-sans:   'Hiragino Sans', 'Yu Gothic', '游ゴシック', 'Noto Sans JP', sans-serif;
 }
 
-/* ----- 全体のリセット(余白を整える) ----- */
+/* ----- リセット ----- */
 * {
   box-sizing: border-box;
 }
@@ -34,123 +47,258 @@ html, body {
 }
 
 body {
-  /* 日本語に向いたフォントを指定 */
-  font-family: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "Yu Mincho", "游明朝", "Noto Serif JP", serif;
-  background-color: var(--color-bg);
-  /* 木目のような縦線をうっすら入れる(背景パターン) */
-  background-image:
-    repeating-linear-gradient(
-      90deg,
-      rgba(139, 90, 43, 0.04) 0px,
-      rgba(139, 90, 43, 0.04) 1px,
-      transparent 1px,
-      transparent 80px
-    );
+  font-family: var(--font-serif);
+  background: linear-gradient(180deg, var(--color-bg-1) 0%, var(--color-bg-2) 100%);
+  background-attachment: fixed;
   color: var(--color-text);
   line-height: 1.8;
   font-size: 16px;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ----- 背景の装飾(葉っぱの薄い影) ----- */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(ellipse at 10% 0%, rgba(180, 200, 170, 0.15) 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 100%, rgba(220, 200, 170, 0.12) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ----- 中央寄せの枠 ----- */
 .container {
-  max-width: 980px;
+  max-width: 880px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
-/* ----- ヘッダー(画面の上) ----- */
+/* ============================================================
+   ヘッダー
+   ============================================================ */
 .site-header {
-  background-color: var(--color-wood-dark);
-  /* 木目のグラデーション */
-  background-image: linear-gradient(
-    180deg,
-    #6b4423 0%,
-    #5a3a1c 100%
-  );
-  color: var(--color-paper);
-  padding: 2rem 0 1.2rem;
-  border-bottom: 4px solid var(--color-accent);
-  box-shadow: var(--shadow-soft);
+  text-align: center;
+  padding: 3rem 0 2rem;
+  position: relative;
+}
+
+.site-header-inner {
+  position: relative;
+}
+
+/* 葉の装飾(左上) */
+.site-header-inner::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 80px;
+  height: 60px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 60'%3E%3Cellipse cx='18' cy='15' rx='6' ry='11' fill='%239bb088' opacity='0.6' transform='rotate(-30 18 15)'/%3E%3Cellipse cx='28' cy='28' rx='5' ry='9' fill='%23a5b893' opacity='0.6' transform='rotate(-15 28 28)'/%3E%3Cellipse cx='38' cy='42' rx='5' ry='8' fill='%23b5c5a0' opacity='0.6' transform='rotate(20 38 42)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  pointer-events: none;
+  animation: leaf-sway 6s ease-in-out infinite;
+  transform-origin: bottom right;
+}
+
+/* 葉の装飾(右上) */
+.site-header-inner::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 80px;
+  height: 60px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 60'%3E%3Cellipse cx='62' cy='15' rx='6' ry='11' fill='%239bb088' opacity='0.6' transform='rotate(30 62 15)'/%3E%3Cellipse cx='52' cy='28' rx='5' ry='9' fill='%23a5b893' opacity='0.6' transform='rotate(15 52 28)'/%3E%3Cellipse cx='42' cy='42' rx='5' ry='8' fill='%23b5c5a0' opacity='0.6' transform='rotate(-20 42 42)'/%3E%3Ccircle cx='56' cy='25' r='3' fill='%23d96a5a' opacity='0.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  pointer-events: none;
+  animation: leaf-sway 7s ease-in-out infinite reverse;
+  transform-origin: bottom left;
+}
+
+@keyframes leaf-sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.site-overline {
+  font-size: 11px;
+  color: var(--color-muted);
+  letter-spacing: 0.4em;
+  margin: 0 0 0.8rem;
 }
 
 .site-title {
-  font-size: 1.8rem;
-  margin: 0 0 0.3rem;
-  letter-spacing: 0.05em;
+  font-family: var(--font-script);
+  font-size: 56px;
+  color: var(--color-text);
+  margin: 0;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 .site-title a {
-  color: var(--color-paper);
+  color: var(--color-text);
   text-decoration: none;
+}
+
+.site-title-jp {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--color-text-soft);
+  margin: 0.5rem 0 0;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+}
+
+.site-divider {
+  width: 80px;
+  height: 1px;
+  background: var(--color-border-strong);
+  margin: 1rem auto;
 }
 
 .site-subtitle {
-  margin: 0 0 1rem;
-  color: #e8d9b8;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 13px;
+  color: var(--color-text-soft);
+  margin: 0;
+  letter-spacing: 0.05em;
 }
 
+/* ----- ナビゲーション ----- */
 .site-nav {
   display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
   flex-wrap: wrap;
-  gap: 0.5rem 1.2rem;
-  margin-top: 0.5rem;
 }
 
 .site-nav a {
-  color: #e8d9b8;
+  color: var(--color-text-soft);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   padding: 0.3rem 0;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s, color 0.2s;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .site-nav a:hover,
 .site-nav a.is-active {
-  color: #fff;
+  color: var(--color-accent);
   border-bottom-color: var(--color-accent);
 }
 
-/* ----- 導入文 ----- */
-.intro {
-  background-color: var(--color-paper);
-  border-left: 4px solid var(--color-green);
-  padding: 1.2rem 1.5rem;
-  margin: 2rem 0;
-  border-radius: var(--radius);
+/* ----- 昼夜切替ボタン(フェーズ1では仮、フェーズ2で本格化) ----- */
+.mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-paper);
+  border: 1px solid var(--color-border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 100;
   box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
 }
 
-.intro p {
-  margin: 0;
+.mode-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-card);
 }
 
-/* ----- セクション(各まとまり) ----- */
+/* ============================================================
+   セクション
+   ============================================================ */
 .section {
   margin: 3rem 0;
 }
 
-.section-title {
-  font-size: 1.4rem;
-  color: var(--color-wood-dark);
-  border-bottom: 2px solid var(--color-line);
-  padding-bottom: 0.5rem;
-  margin: 0 0 0.8rem;
+/* ----- イントロ ----- */
+.intro {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin: 2rem 0 3rem;
+  font-size: 14px;
+  color: var(--color-text-soft);
+  line-height: 2;
 }
 
-.section-lead {
+/* ----- セクションタイトル(チャプター式) ----- */
+.section-chapter {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-chapter-overline {
+  font-size: 11px;
   color: var(--color-muted);
-  margin: 0 0 1.2rem;
-  font-size: 0.95rem;
+  letter-spacing: 0.4em;
+  margin: 0;
 }
 
-/* ----- カテゴリーカード(7つの本棚) ----- */
+.section-chapter-title {
+  font-family: var(--font-script);
+  font-size: 38px;
+  color: var(--color-text);
+  margin: 0.3rem 0;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.section-chapter-jp {
+  font-size: 14px;
+  color: var(--color-text-soft);
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+/* ----- 区切り線(植物モチーフ) ----- */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border-strong), transparent);
+  max-width: 200px;
+}
+
+.divider-mark {
+  margin: 0 1.2rem;
+  color: var(--color-muted);
+  font-size: 16px;
+}
+
+/* ============================================================
+   カテゴリーカード(本棚への入口)
+   ============================================================ */
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 12px;
+  gap: 14px;
+  margin-top: 1.5rem;
 }
 
 .category-card {
@@ -158,118 +306,143 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.2rem 0.5rem;
-  background-color: var(--color-paper);
-  border: 1px solid var(--color-line);
+  padding: 1.2rem 0.6rem;
+  background: var(--color-paper-soft);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
   text-decoration: none;
-  color: var(--color-wood-dark);
+  color: var(--color-text);
   box-shadow: var(--shadow-soft);
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-
-.category-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-book);
-}
-
-.category-icon {
-  font-size: 1.8rem;
-  margin-bottom: 0.3rem;
-}
-
-.category-name {
-  font-size: 0.95rem;
+  transition: all 0.3s ease;
   text-align: center;
 }
 
-/* ----- 本棚(教材カードを並べる場所) ----- */
-.shelf {
-  /* 木の棚板のような下線をつける */
-  border-bottom: 6px solid var(--color-wood);
-  border-radius: 0 0 4px 4px;
-  padding-bottom: 1.2rem;
-  background-image: linear-gradient(
-    180deg,
-    transparent 0%,
-    transparent 95%,
-    rgba(139, 90, 43, 0.08) 100%
-  );
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-border-strong);
 }
 
-/* ----- 教材カードのグリッド ----- */
+.category-icon {
+  font-size: 28px;
+  margin-bottom: 0.4rem;
+}
+
+.category-name {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   教材カード(本)
+   ============================================================ */
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 16px;
+  margin-top: 1.2rem;
 }
 
-/* ----- 教材カード(本のような見た目) ----- */
 .book-card {
-  position: relative;
-  background-color: var(--color-paper);
-  /* 本の左側の背表紙のような線 */
-  border-left: 6px solid var(--color-green);
-  border-top: 1px solid var(--color-line);
-  border-right: 1px solid var(--color-line);
-  border-bottom: 1px solid var(--color-line);
-  border-radius: 4px var(--radius) var(--radius) 4px;
-  padding: 1.2rem 1.2rem 1rem;
-  box-shadow: var(--shadow-book);
+  background: var(--color-paper-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.2rem 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
 }
 
 .book-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(90, 58, 28, 0.22);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-border-strong);
 }
 
 .book-card.is-coming {
-  /* Coming soonは少し控えめに */
-  border-left-color: var(--color-coming);
-  opacity: 0.92;
+  background: rgba(255, 252, 245, 0.4);
+  border: 1px dashed var(--color-coming);
+  cursor: default;
+}
+
+.book-card.is-coming:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--color-coming);
+}
+
+/* 本のイラスト */
+.book-illustration {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-illustration svg {
+  width: 100%;
+  height: 100%;
+}
+
+.book-card.is-coming .book-illustration {
+  opacity: 0.4;
 }
 
 .book-status {
   display: inline-block;
-  align-self: flex-start;
-  font-size: 0.75rem;
-  padding: 0.15rem 0.6rem;
+  font-size: 10px;
+  padding: 2px 10px;
   border-radius: 999px;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.15em;
+  align-self: center;
 }
 
 .status-open {
-  background-color: var(--color-green);
+  background: var(--color-leaf);
   color: #fff;
 }
 
 .status-coming {
-  background-color: #e9dcc1;
-  color: #6b5436;
-  border: 1px solid #d8c9a8;
+  background: rgba(140, 120, 80, 0.1);
+  color: var(--color-muted);
+  border: 1px solid var(--color-coming);
+  font-style: italic;
 }
 
 .book-category {
-  font-size: 0.8rem;
+  font-size: 10px;
   color: var(--color-muted);
-  margin: 0 0 0.3rem;
-  letter-spacing: 0.05em;
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 .book-title {
-  font-size: 1.1rem;
-  color: var(--color-wood-dark);
-  margin: 0 0 0.6rem;
+  font-size: 14px;
+  color: var(--color-text);
+  margin: 0 0 0.3rem;
   line-height: 1.5;
+  font-weight: 500;
+}
+
+.book-title-en {
+  font-size: 11px;
+  color: var(--color-muted);
+  margin: 0 0 0.8rem;
+  font-style: italic;
+  letter-spacing: 0.05em;
 }
 
 .book-desc {
-  font-size: 0.9rem;
-  color: var(--color-text);
+  font-size: 12px;
+  color: var(--color-text-soft);
   margin: 0 0 1rem;
   line-height: 1.7;
   flex-grow: 1;
@@ -278,195 +451,345 @@ body {
 .book-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
+  justify-content: center;
   margin-top: auto;
 }
 
-/* ----- ボタン ----- */
+/* ============================================================
+   ボタン
+   ============================================================ */
 .btn {
   display: inline-block;
-  padding: 0.5rem 1.1rem;
-  font-size: 0.9rem;
-  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 12px;
+  border-radius: 4px;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: background-color 0.15s, color 0.15s;
+  transition: all 0.3s ease;
+  letter-spacing: 0.1em;
+  font-family: var(--font-serif);
 }
 
 .btn-primary {
-  background-color: var(--color-wood);
-  color: #fff;
+  background: var(--color-text);
+  color: var(--color-paper);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-wood-dark);
+  background: var(--color-accent);
 }
 
 .btn-secondary {
-  background-color: var(--color-paper);
-  color: var(--color-wood-dark);
-  border-color: var(--color-wood);
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border-strong);
 }
 
 .btn-secondary:hover {
-  background-color: #efe6cf;
+  background: var(--color-paper);
+  border-color: var(--color-text);
 }
 
 .btn-disabled {
-  background-color: #e0d4b8;
-  color: #8a7656;
+  background: rgba(140, 120, 80, 0.1);
+  color: var(--color-muted);
   cursor: not-allowed;
-  border-color: #d0c098;
+  font-style: italic;
 }
 
-/* ----- メッセージボックス(父からの言葉用) ----- */
+/* ============================================================
+   メッセージボックス・コールアウト
+   ============================================================ */
 .message-box {
-  background-color: var(--color-paper);
-  border: 1px solid var(--color-line);
-  border-left: 4px solid var(--color-accent);
-  padding: 1.5rem;
+  background: var(--color-paper-soft);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  padding: 1.5rem 1.8rem;
   border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  margin: 2rem 0;
+}
+
+.message-box-title {
+  font-family: var(--font-script);
+  font-size: 24px;
+  color: var(--color-accent);
+  margin: 0 0 0.8rem;
+  font-weight: 400;
 }
 
 .message-box p {
   margin: 0.5rem 0;
+  font-size: 14px;
+  line-height: 1.9;
 }
 
-/* ----- 記事ページ(教材詳細・aboutなど) ----- */
+/* ============================================================
+   記事ページ(教材詳細・about・letter)
+   ============================================================ */
 .article {
-  background-color: var(--color-paper);
-  padding: 2rem;
+  background: var(--color-paper);
+  padding: 2.5rem 2rem;
   margin: 2rem 0;
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-border);
+}
+
+.article-overline {
+  font-size: 11px;
+  color: var(--color-muted);
+  letter-spacing: 0.3em;
+  text-align: center;
+  margin: 0;
 }
 
 .article-title {
-  font-size: 1.6rem;
-  color: var(--color-wood-dark);
-  border-bottom: 2px solid var(--color-line);
-  padding-bottom: 0.6rem;
+  font-family: var(--font-serif);
+  font-size: 26px;
+  color: var(--color-text);
+  text-align: center;
+  margin: 0.5rem 0 0.3rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.article-title-en {
+  font-family: var(--font-script);
+  font-size: 24px;
+  color: var(--color-text-soft);
+  text-align: center;
   margin: 0 0 1.5rem;
+  font-weight: 400;
+}
+
+.article-divider {
+  width: 80px;
+  height: 1px;
+  background: var(--color-border-strong);
+  margin: 1.5rem auto;
 }
 
 .article-subtitle {
-  font-size: 1.2rem;
-  color: var(--color-green);
-  margin: 2rem 0 0.6rem;
-  border-left: 4px solid var(--color-green);
-  padding-left: 0.7rem;
+  font-size: 17px;
+  color: var(--color-text);
+  margin: 2rem 0 0.8rem;
+  font-weight: 500;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.article-subtitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 16px;
+  background: var(--color-accent);
 }
 
 .callout {
-  background-color: #f1e7d0;
-  border-left: 4px solid var(--color-accent);
-  padding: 1rem 1.2rem;
+  background: rgba(255, 248, 230, 0.6);
+  border: 1px solid rgba(180, 150, 100, 0.3);
+  padding: 1.2rem 1.4rem;
   border-radius: var(--radius);
   margin: 1.5rem 0;
 }
 
 .callout-title {
-  font-size: 1rem;
-  color: var(--color-wood-dark);
-  margin: 0 0 0.4rem;
+  font-family: var(--font-script);
+  font-size: 22px;
+  color: var(--color-accent);
+  margin: 0 0 0.5rem;
+  font-weight: 400;
+}
+
+.callout p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .bullet-list {
-  padding-left: 1.4rem;
-  margin: 0.6rem 0;
+  padding-left: 1.5rem;
+  margin: 0.8rem 0;
 }
 
 .bullet-list li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
-/* ----- 手紙ページ専用デザイン ----- */
+/* ============================================================
+   手紙ページ専用デザイン
+   ============================================================ */
 .letter {
-  background-color: #fbf4dd;
-  /* 手紙のような薄い罫線の雰囲気 */
+  background: #fcf5e3;
   background-image: repeating-linear-gradient(
     180deg,
     transparent 0,
     transparent 31px,
-    rgba(139, 90, 43, 0.08) 32px
+    rgba(140, 120, 80, 0.08) 32px
   );
-  padding: 2.5rem;
+  padding: 3rem 2.5rem;
   margin: 2rem 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(140, 120, 80, 0.2);
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.letter::before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  border: 1px solid rgba(140, 120, 80, 0.15);
   border-radius: var(--radius);
-  border: 1px solid #d8c9a8;
-  box-shadow: var(--shadow-book);
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", "游明朝", serif;
+  pointer-events: none;
 }
 
 .letter-title {
-  font-size: 1.4rem;
-  color: var(--color-wood-dark);
-  margin: 0 0 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--color-text);
+  margin: 0 0 1.8rem;
+  font-weight: 500;
+  position: relative;
 }
 
 .letter p {
-  margin: 0.8rem 0;
-  font-size: 1.05rem;
-  line-height: 2;
+  margin: 1rem 0;
+  font-size: 15px;
+  line-height: 2.1;
+  position: relative;
 }
 
 .letter-sign {
   margin-top: 2rem !important;
   text-align: right;
-  color: var(--color-wood-dark);
+  color: var(--color-text);
+  font-style: italic;
 }
 
-/* ----- フッター ----- */
+/* ============================================================
+   フッター
+   ============================================================ */
 .site-footer {
   margin-top: 4rem;
-  padding: 1.5rem 0;
-  background-color: var(--color-wood-dark);
-  color: #d8c9a8;
+  padding: 2rem 0 1.5rem;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 11px;
+  color: var(--color-muted);
+  letter-spacing: 0.3em;
+  border-top: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
 }
 
-/* ===========================================
-   スマホ対応(画面が小さい時のスタイル)
-   =========================================== */
+.site-footer::before {
+  content: '❦';
+  display: block;
+  font-size: 18px;
+  color: var(--color-text-soft);
+  margin-bottom: 0.8rem;
+  font-style: italic;
+}
+
+/* ============================================================
+   スマホ対応
+   ============================================================ */
 @media (max-width: 600px) {
   body {
     font-size: 15px;
   }
 
+  .site-header {
+    padding: 2rem 0 1.5rem;
+  }
+
   .site-title {
-    font-size: 1.4rem;
+    font-size: 40px;
+  }
+
+  .site-title-jp {
+    font-size: 16px;
   }
 
   .site-subtitle {
-    font-size: 0.85rem;
+    font-size: 12px;
   }
 
-  .section-title {
-    font-size: 1.2rem;
+  .site-nav {
+    gap: 1.2rem;
+    font-size: 12px;
+  }
+
+  .section-chapter-title {
+    font-size: 30px;
   }
 
   .article {
-    padding: 1.3rem;
+    padding: 1.5rem 1.2rem;
   }
 
   .letter {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .article-title {
-    font-size: 1.3rem;
+    font-size: 20px;
   }
 
   .book-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .book-card {
+    padding: 1rem 0.8rem;
+  }
+
+  .book-title {
+    font-size: 13px;
+  }
+
+  .book-desc {
+    font-size: 11px;
   }
 
   .category-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+  }
+
+  .category-card {
+    padding: 1rem 0.4rem;
+  }
+
+  .category-name {
+    font-size: 12px;
+  }
+
+  .mode-toggle {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .site-header-inner::before,
+  .site-header-inner::after {
+    width: 50px;
+    height: 40px;
+    background-size: 50px;
   }
 }
