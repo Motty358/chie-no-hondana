@@ -1,27 +1,29 @@
+
 <!DOCTYPE html>
 <!--
-  lessons/time-investment.html  =  教材詳細ページ
-  「正しい投資としての時間の使い方」のページです。
-  新しい教材を追加する時は、このファイルをコピーして
-  lessons/ フォルダの中に新しい名前で保存してください。
+  lessons/time-investment.html
+  「正しい投資としての時間の使い方」教材詳細ページ
 -->
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>正しい投資としての時間の使い方｜人生の知恵の本棚</title>
-  <!--
-    このページは「lessons」フォルダの中にあるので、
-    CSSやJSを読み込むパスは「../」(ひとつ上のフォルダへ戻る)が必要です。
-  -->
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
+  <button class="mode-toggle" title="昼夜モード切替(準備中)">☀</button>
+
   <header class="site-header">
     <div class="container">
-      <h1 class="site-title"><a href="../index.html">人生の知恵の本棚</a></h1>
-      <p class="site-subtitle">学校では教わらないけれど、生きていくうえで本当に大切なことを、必要な時に取り出せる場所。</p>
+      <div class="site-header-inner">
+        <p class="site-overline">— A LIBRARY OF WISDOM —</p>
+        <h1 class="site-title"><a href="../index.html">Wisdom for Life</a></h1>
+        <p class="site-title-jp">人生の知恵の本棚</p>
+        <div class="site-divider"></div>
+        <p class="site-subtitle">学校では教わらないけれど、生きていくうえで本当に大切なことを、必要な時に取り出せる場所。</p>
+      </div>
       <nav class="site-nav">
         <a href="../index.html">本棚トップ</a>
         <a href="../about.html">この図書館について</a>
@@ -32,16 +34,16 @@
 
   <main class="container">
     <article class="article">
-      <p class="book-category">時間の本棚</p>
+      <p class="article-overline">— TIME · 時間の本棚 —</p>
       <h2 class="article-title">正しい投資としての時間の使い方</h2>
+      <p class="article-title-en">Investment of Time</p>
+      <div class="article-divider"></div>
 
-      <!-- ひとことで言うと -->
       <section class="callout">
-        <h3 class="callout-title">ひとことで言うと</h3>
+        <h3 class="callout-title">In a word</h3>
         <p>時間は「使い方」で価値が変わる。同じ1時間でも、未来の自分を強くする時間に変えられる。</p>
       </section>
 
-      <!-- 本文 -->
       <h3 class="article-subtitle">本文</h3>
       <p>
         私たちは1日に同じ24時間を持っています。
@@ -63,7 +65,6 @@
         例えば、毎日10分だけ本を読む。これは1年で約60時間、立派な学びの時間になります。
       </p>
 
-      <!-- 学びのポイント -->
       <h3 class="article-subtitle">学びのポイント</h3>
       <ul class="bullet-list">
         <li>時間は「消費・浪費・投資」に分けて考える</li>
@@ -72,7 +73,6 @@
         <li>小さな積み重ねが、大きな差になる</li>
       </ul>
 
-      <!-- 今日からできること -->
       <h3 class="article-subtitle">今日からできること</h3>
       <ul class="bullet-list">
         <li>今日の自分の時間を、紙に書き出してみる</li>
@@ -80,14 +80,12 @@
         <li>明日、その投資の時間を10分だけ増やしてみる</li>
       </ul>
 
-      <!-- PDFを見るボタン -->
-      <p style="margin-top: 2rem;">
+      <p style="margin-top: 2rem; text-align: center;">
         <a class="btn btn-secondary" href="../assets/pdf/time-investment.pdf" target="_blank" rel="noopener">PDFを見る</a>
       </p>
 
-      <!-- 父からひとこと -->
       <section class="message-box" style="margin-top: 3rem;">
-        <h3 class="callout-title">父からひとこと</h3>
+        <h3 class="message-box-title">From father</h3>
         <p>
           人生で本当に大切なことは、学校の教科書だけには載っていないことも多い。<br>
           だからこそ、父さんが遠回りしながら学んできたことを、少しずつこの本棚に残していきます。<br>
@@ -95,7 +93,7 @@
         </p>
       </section>
 
-      <p style="margin-top: 2rem;">
+      <p style="margin-top: 2.5rem; text-align: center;">
         <a class="btn btn-primary" href="../index.html">本棚トップへ戻る</a>
       </p>
     </article>
@@ -103,7 +101,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 人生の知恵の本棚</p>
+      <p>— with love, from father —</p>
     </div>
   </footer>
 
