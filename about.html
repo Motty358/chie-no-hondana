@@ -1,7 +1,7 @@
+
 <!DOCTYPE html>
 <!--
   about.html  =  この図書館について のページ
-  サイトの目的・想いを伝えるページです。
 -->
 <html lang="ja">
 <head>
@@ -12,10 +12,17 @@
 </head>
 <body>
 
+  <button class="mode-toggle" title="昼夜モード切替(準備中)">☀</button>
+
   <header class="site-header">
     <div class="container">
-      <h1 class="site-title"><a href="index.html">人生の知恵の本棚</a></h1>
-      <p class="site-subtitle">学校では教わらないけれど、生きていくうえで本当に大切なことを、必要な時に取り出せる場所。</p>
+      <div class="site-header-inner">
+        <p class="site-overline">— A LIBRARY OF WISDOM —</p>
+        <h1 class="site-title"><a href="index.html">Wisdom for Life</a></h1>
+        <p class="site-title-jp">人生の知恵の本棚</p>
+        <div class="site-divider"></div>
+        <p class="site-subtitle">学校では教わらないけれど、生きていくうえで本当に大切なことを、必要な時に取り出せる場所。</p>
+      </div>
       <nav class="site-nav">
         <a href="index.html">本棚トップ</a>
         <a href="about.html" class="is-active">この図書館について</a>
@@ -26,7 +33,10 @@
 
   <main class="container">
     <article class="article">
+      <p class="article-overline">— ABOUT —</p>
       <h2 class="article-title">この図書館について</h2>
+      <p class="article-title-en">About this Library</p>
+      <div class="article-divider"></div>
 
       <p>
         このサイトは、父から子へ、人生で大切だと思う知恵を残していくための小さな学びの図書館です。
@@ -54,7 +64,7 @@
         読みたい時に、読みたい一冊を手に取ってください。
       </p>
 
-      <p style="margin-top: 2rem;">
+      <p style="margin-top: 2.5rem; text-align: center;">
         <a class="btn btn-primary" href="index.html">本棚トップへ戻る</a>
       </p>
     </article>
@@ -62,7 +72,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 人生の知恵の本棚</p>
+      <p>— with love, from father —</p>
     </div>
   </footer>
 
