@@ -1,109 +1,374 @@
-人生の知恵の本棚｜A Library of Wisdom
 
-☀
-— A LIBRARY OF WISDOM —
-Wisdom for Life
-人生の知恵の本棚
+<!DOCTYPE html>
+<!--
+  index.html  =  サイトのトップページ
+  ヴィンテージ・ライブラリーデザイン(昼モード)
+-->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人生の知恵の本棚｜A Library of Wisdom</title>
+  <meta name="description" content="父から子へ、人生で本当に大切な知恵を残していく学びの図書館。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 
-学校では教わらないけれど、生きていくうえで本当に大切なことを、必要な時に取り出せる場所。
-本棚トップ この図書館について 父からテルへ 
-この本棚は、父から子へ、人生で本当に大切だと思う知恵を残していくための小さな図書館です。 必要な時に、必要な一冊を、いつでも取り出せます。 
-CATEGORIES
-Bookshelves
-本棚一覧
-⏳ 時間の本棚 🌱 自分を育てる本棚 🍃 心を整える本棚 🤝 人間関係の本棚 💼 お金と仕事の本棚 🍀 運と人生の本棚 📖 読書の本棚 
+  <!-- 昼夜切替ボタン(フェーズ1では仮ボタン、フェーズ2で機能追加) -->
+  <button class="mode-toggle" title="昼夜モード切替(準備中)">☀</button>
 
-❦
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header-inner">
+        <p class="site-overline">— A LIBRARY OF WISDOM —</p>
+        <h1 class="site-title"><a href="index.html">Wisdom for Life</a></h1>
+        <p class="site-title-jp">人生の知恵の本棚</p>
+        <div class="site-divider"></div>
+        <p class="site-subtitle">学校では教わらないけれど、生きていくうえで本当に大切なことを、必要な時に取り出せる場所。</p>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html" class="is-active">本棚トップ</a>
+        <a href="about.html">この図書館について</a>
+        <a href="letter.html">父からテルへ</a>
+      </nav>
+    </div>
+  </header>
 
-A Letter
-すぐに全部わからなくてもいい。 今はピンとこないことも、いつか「あ、こういうことだったのか」と思える日が来るかもしれません。 その時に、この本棚が少しでも役に立てば嬉しいです。 
-手紙を読む 
-CHAPTER · I
-Time
-⏳ 時間の本棚
+  <main class="container">
 
-公開中
-TIME
-正しい投資としての時間の使い方
-Investment of Time
-時間は「消費・浪費・投資」に分けられる。同じ1時間でも、使い方と意識によって未来の自分を強くする時間に変えられる。
-読む PDF 
+    <!-- ===== 導入 ===== -->
+    <section class="intro">
+      <p>
+        この本棚は、父から子へ、人生で本当に大切だと思う知恵を残していくための小さな図書館です。<br>
+        必要な時に、必要な一冊を、いつでも取り出せます。
+      </p>
+    </section>
 
-❦
+    <!-- ===== カテゴリー一覧 ===== -->
+    <section class="section">
+      <div class="section-chapter">
+        <p class="section-chapter-overline">CATEGORIES</p>
+        <h2 class="section-chapter-title">Bookshelves</h2>
+        <p class="section-chapter-jp">本棚一覧</p>
+      </div>
 
-CHAPTER · II
-Growth
-🌱 自分を育てる本棚
+      <div class="category-grid">
+        <a class="category-card" href="#shelf-time">
+          <span class="category-icon">⏳</span>
+          <span class="category-name">時間の本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-self">
+          <span class="category-icon">🌱</span>
+          <span class="category-name">自分を育てる本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-mind">
+          <span class="category-icon">🍃</span>
+          <span class="category-name">心を整える本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-relation">
+          <span class="category-icon">🤝</span>
+          <span class="category-name">人間関係の本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-money">
+          <span class="category-icon">💼</span>
+          <span class="category-name">お金と仕事の本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-luck">
+          <span class="category-icon">🍀</span>
+          <span class="category-name">運と人生の本棚</span>
+        </a>
+        <a class="category-card" href="#shelf-read">
+          <span class="category-icon">📖</span>
+          <span class="category-name">読書の本棚</span>
+        </a>
+      </div>
+    </section>
 
-公開中
-GROWTH
-自分にしかできないことの見つけ方
-Find Your Path
-「誰にでもできることを、誰もやらないところまでやり続ける」その差こそが、自分にしかできないことになる。
-読む PDF 
+    <!-- 区切り -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-mark">❦</span>
+      <div class="divider-line"></div>
+    </div>
 
-❦
+    <!-- ===== 父からテルへ(短いメッセージ) ===== -->
+    <section class="message-box">
+      <h2 class="message-box-title">A Letter</h2>
+      <p>
+        すぐに全部わからなくてもいい。<br>
+        今はピンとこないことも、いつか「あ、こういうことだったのか」と思える日が来るかもしれません。<br>
+        その時に、この本棚が少しでも役に立てば嬉しいです。
+      </p>
+      <p style="margin-top: 1.2rem;">
+        <a class="btn btn-primary" href="letter.html">手紙を読む</a>
+      </p>
+    </section>
 
-CHAPTER · III
-Mind
-🍃 心を整える本棚
+    <!-- ===== 時間の本棚 ===== -->
+    <section class="section" id="shelf-time">
+      <div class="section-chapter">
+        <p class="section-chapter-overline">CHAPTER · I</p>
+        <h2 class="section-chapter-title">Time</h2>
+        <p class="section-chapter-jp">⏳ 時間の本棚</p>
+      </div>
 
-公開中
-MIND
-いただきますの本当の意味
-Gratitude in a Bowl
-一杯のごはんの背後にある、宇宙のつながり、母さんの時間、命の重み。「いただきます」の六文字は、君と世界を深くつないでいる。
-読む PDF 
+      <div class="book-grid">
+        <article class="book-card">
+          <!-- 本のイラスト -->
+          <div class="book-illustration">
+            <svg viewBox="0 0 70 70">
+              <rect x="14" y="18" width="42" height="46" fill="#a08560" rx="2"/>
+              <rect x="16" y="20" width="38" height="42" fill="#c4a575" rx="1"/>
+              <circle cx="35" cy="36" r="12" fill="none" stroke="#7a5a3a" stroke-width="1.2"/>
+              <line x1="35" y1="28" x2="35" y2="36" stroke="#7a5a3a" stroke-width="1.5"/>
+              <line x1="35" y1="36" x2="40" y2="40" stroke="#7a5a3a" stroke-width="1.2"/>
+              <circle cx="35" cy="36" r="1.5" fill="#7a5a3a"/>
+              <circle cx="35" cy="56" r="2" fill="#d96a5a" opacity="0.7"/>
+            </svg>
+          </div>
+          <span class="book-status status-open">公開中</span>
+          <p class="book-category">TIME</p>
+          <h3 class="book-title">正しい投資としての時間の使い方</h3>
+          <p class="book-title-en">Investment of Time</p>
+          <p class="book-desc">時間は「消費・浪費・投資」に分けられる。同じ1時間でも、使い方と意識によって未来の自分を強くする時間に変えられる。</p>
+          <div class="book-actions">
+            <a class="btn btn-primary" href="lessons/time-investment.html">読む</a>
+            <a class="btn btn-secondary" href="assets/pdf/time-investment.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-❦
+    <!-- 区切り -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-mark">❦</span>
+      <div class="divider-line"></div>
+    </div>
 
-CHAPTER · IV
-Relations
-🤝 人間関係の本棚
+    <!-- ===== 自分を育てる本棚 ===== -->
+    <section class="section" id="shelf-self">
+      <div class="section-chapter">
+        <p class="section-chapter-overline">CHAPTER · II</p>
+        <h2 class="section-chapter-title">Growth</h2>
+        <p class="section-chapter-jp">🌱 自分を育てる本棚</p>
+      </div>
 
-Coming soon
-RELATIONS
-準備中の一冊
-Coming soon
-これから少しずつ追加していきます。お楽しみに。
-準備中 
+      <div class="book-grid">
+        <article class="book-card">
+          <div class="book-illustration">
+            <svg viewBox="0 0 70 70">
+              <ellipse cx="35" cy="58" rx="20" ry="3" fill="#a08560" opacity="0.4"/>
+              <path d="M35 58 L35 40" stroke="#7a8a5a" stroke-width="2"/>
+              <path d="M35 40 Q26 33 22 36 Q26 42 35 40" fill="#9bb088"/>
+              <path d="M35 40 Q44 33 48 36 Q44 42 35 40" fill="#a5b893"/>
+              <path d="M35 32 Q31 25 29 28 Q33 33 35 32" fill="#b5c5a0"/>
+              <path d="M35 32 Q39 25 41 28 Q37 33 35 32" fill="#9bb088"/>
+              <circle cx="35" cy="58" r="6" fill="#a08560"/>
+              <circle cx="35" cy="22" r="2.5" fill="#d96a5a" opacity="0.8"/>
+            </svg>
+          </div>
+          <span class="book-status status-open">公開中</span>
+          <p class="book-category">GROWTH</p>
+          <h3 class="book-title">自分にしかできないことの見つけ方</h3>
+          <p class="book-title-en">Find Your Path</p>
+          <p class="book-desc">「誰にでもできることを、誰もやらないところまでやり続ける」その差こそが、自分にしかできないことになる。</p>
+          <div class="book-actions">
+            <a class="btn btn-primary" href="lessons/jibun-ni-shika-dekinai-koto.html">読む</a>
+            <a class="btn btn-secondary" href="assets/pdf/jibun-ni-shika-dekinai-koto.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-❦
+    <!-- 区切り -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-mark">❦</span>
+      <div class="divider-line"></div>
+    </div>
 
-CHAPTER · V
-Money & Work
-💼 お金と仕事の本棚
+    <!-- ===== 心を整える本棚 ===== -->
+    <section class="section" id="shelf-mind">
+      <div class="section-chapter">
+        <p class="section-chapter-overline">CHAPTER · III</p>
+        <h2 class="section-chapter-title">Mind</h2>
+        <p class="section-chapter-jp">🍃 心を整える本棚</p>
+      </div>
 
-Coming soon
-MONEY
-お金より先に信用を貯める
-Earn Trust First
-社会に出て本当に大切になる「信用」という見えない財産について学ぶ。
-準備中 
+      <div class="book-grid">
+        <article class="book-card">
+          <div class="book-illustration">
+            <svg viewBox="0 0 70 70">
+              <ellipse cx="35" cy="50" rx="22" ry="5" fill="#a08560" opacity="0.3"/>
+              <path d="M18 50 Q20 30 35 28 Q50 30 52 50 Z" fill="#fcf5e3" stroke="#a08560" stroke-width="1"/>
+              <ellipse cx="35" cy="32" rx="12" ry="3" fill="#fff" opacity="0.6"/>
+              <circle cx="28" cy="40" r="2" fill="#d96a5a" opacity="0.7"/>
+              <circle cx="35" cy="38" r="2.5" fill="#d96a5a" opacity="0.7"/>
+              <circle cx="42" cy="40" r="2" fill="#d96a5a" opacity="0.7"/>
+              <path d="M30 26 Q32 20 28 22" fill="none" stroke="#9bb088" stroke-width="1"/>
+              <path d="M40 26 Q38 20 42 22" fill="none" stroke="#9bb088" stroke-width="1"/>
+            </svg>
+          </div>
+          <span class="book-status status-open">公開中</span>
+          <p class="book-category">MIND</p>
+          <h3 class="book-title">いただきますの本当の意味</h3>
+          <p class="book-title-en">Gratitude in a Bowl</p>
+          <p class="book-desc">一杯のごはんの背後にある、宇宙のつながり、母さんの時間、命の重み。「いただきます」の六文字は、君と世界を深くつないでいる。</p>
+          <div class="book-actions">
+            <a class="btn btn-primary" href="lessons/itadakimasu.html">読む</a>
+            <a class="btn btn-secondary" href="assets/pdf/itadakimasu.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-❦
+    <!-- 区切り -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-mark">❦</span>
+      <div class="divider-line"></div>
+    </div>
 
-CHAPTER · VI
-Fortune
-🍀 運と人生の本棚
+    <!-- ===== 人間関係の本棚 ===== -->
+    <section class="section" id="shelf-relation">
+      <div class="section-chapter">
+        <p class="section-chapter-overline">CHAPTER · IV</p>
+        <h2 class="section-chapter-title">Relations</h2>
+        <p class="section-chapter-jp">🤝 人間関係の本棚</p>
+      </div>
 
-Coming soon
-FORTUNE
-運とは何か
-What is Luck
-運はただの偶然ではなく、日々の行動・感謝・準備・人との関わりによって受け取れるもの。
-準備中 
+      <div class="book-grid">
+        <article class="book-card is-coming">
+          <div class="book-illustration">
+            <svg viewBox="0 0 70 70">
+              <rect x="18" y="20" width="34" height="40" fill="none" stroke="#a89070" stroke-width="1" stroke-dasharray="3,3" rx="2"/>
+            </svg>
+          </div>
+          <span class="book-status status-coming">Coming soon</span>
+          <p class="book-category">RELATIONS</p>
+          <h3 class="book-title">準備中の一冊</h3>
+          <p class="book-title-en">Coming soon</p>
+          <p class="book-desc">これから少しずつ追加していきます。お楽しみに。</p>
+          <div class="book-actions">
+            <span class="btn btn-disabled">準備中</span>
+          </div>
+        </article>
+      </div>
+    </section>
 
-❦
+    <!-- 区切り -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-mark">❦</span>
+      <div class="divider-line"></div>
+    </div>
 
-CHAPTER · VII
-Reading
-📖 読書の本棚
+    <!-- ===== お金と仕事の本棚 ===== -->
+    <section class="section" id="shelf-money">
+      <div class="section-chapter">
+        <p class="section-chapter-overline">CHAPTER · V</p>
+        <h2 class="section-chapter-title">Money &amp; Work</h2>
+        <p class="section-chapter-jp">💼 お金と仕事の本棚</p>
+      </div>
 
-Coming soon
-READING
-読書は未来の自分への手紙
-Letter to Future You
-本を読むことは、まだ経験していない人生を先に学ぶこと。読書を通じて視野を広げる。
-準備中 
-— with love, from father —
+      <div class="book-grid">
+        <article class="book-card is-coming">
+          <div class="book-illustration">
+            <svg viewBox="0 0 70 70">
+              <rect x="18" y="20" width="34" height="40" fill="none" stroke="#a89070" stroke-width="1" stroke-dasharray="3,3" rx="2"/>
+            </svg>
+          </div>
+          <span class="book-status status-coming">Coming soon</span>
+          <p class="book-category">MONEY</p>
+          <h3 class="book-title">お金より先に信用を貯める</h3>
+          <p class="book-title-en">Earn Trust First</p>
+          <p class="book-desc">社会に出て本当に大切になる「信用」という見えない財産について学ぶ。</p>
+          <div class="book-actions">
+            <span class="btn btn-disabled">準備中</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 区切り -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-mark">❦</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- ===== 運と人生の本棚 ===== -->
+    <section class="section" id="shelf-luck">
+      <div class="section-chapter">
+        <p class="section-chapter-overline">CHAPTER · VI</p>
+        <h2 class="section-chapter-title">Fortune</h2>
+        <p class="section-chapter-jp">🍀 運と人生の本棚</p>
+      </div>
+
+      <div class="book-grid">
+        <article class="book-card is-coming">
+          <div class="book-illustration">
+            <svg viewBox="0 0 70 70">
+              <rect x="18" y="20" width="34" height="40" fill="none" stroke="#a89070" stroke-width="1" stroke-dasharray="3,3" rx="2"/>
+            </svg>
+          </div>
+          <span class="book-status status-coming">Coming soon</span>
+          <p class="book-category">FORTUNE</p>
+          <h3 class="book-title">運とは何か</h3>
+          <p class="book-title-en">What is Luck</p>
+          <p class="book-desc">運はただの偶然ではなく、日々の行動・感謝・準備・人との関わりによって受け取れるもの。</p>
+          <div class="book-actions">
+            <span class="btn btn-disabled">準備中</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 区切り -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-mark">❦</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- ===== 読書の本棚 ===== -->
+    <section class="section" id="shelf-read">
+      <div class="section-chapter">
+        <p class="section-chapter-overline">CHAPTER · VII</p>
+        <h2 class="section-chapter-title">Reading</h2>
+        <p class="section-chapter-jp">📖 読書の本棚</p>
+      </div>
+
+      <div class="book-grid">
+        <article class="book-card is-coming">
+          <div class="book-illustration">
+            <svg viewBox="0 0 70 70">
+              <rect x="18" y="20" width="34" height="40" fill="none" stroke="#a89070" stroke-width="1" stroke-dasharray="3,3" rx="2"/>
+            </svg>
+          </div>
+          <span class="book-status status-coming">Coming soon</span>
+          <p class="book-category">READING</p>
+          <h3 class="book-title">読書は未来の自分への手紙</h3>
+          <p class="book-title-en">Letter to Future You</p>
+          <p class="book-desc">本を読むことは、まだ経験していない人生を先に学ぶこと。読書を通じて視野を広げる。</p>
+          <div class="book-actions">
+            <span class="btn btn-disabled">準備中</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>— with love, from father —</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
