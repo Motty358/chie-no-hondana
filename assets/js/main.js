@@ -1,67 +1,41 @@
-/* ==========================================================
-   人生の知恵の本棚  共通スクリプト(main.js)  v2 夜モード対応版
-   ----------------------------------------------------------
-   役割:
-     1. ページ内リンク(#)を滑らかにスクロール
-     2. 昼夜モードの切替(☀ / 🌙)
-     3. ユーザーの選択を覚えておく(同じパソコン・スマホ内で)
-   ========================================================== */
+/* ============================================================
+   人生の知恵の本棚  main.js
+   昼夜モード切替(☀↔☾) + localStorage保存
+   ============================================================ */
+(function() {
+  'use strict';
 
-document.addEventListener('DOMContentLoaded', function () {
-
-  // ----- 1. 保存されたモードを復元 -----
-  // 前回ユーザーが選んだモードを覚えておいて、再読み込み時に復元します
-  var savedMode = localStorage.getItem('chie-mode') || 'day';
+  // 初期化:HTMLが読み込まれる前に、保存されているモードを反映
+  // これによって「最初は昼で表示されてから夜に切り替わる」というチラつきを防ぐ
+  var savedMode = localStorage.getItem('wisdom-mode') || 'day';
   document.documentElement.setAttribute('data-mode', savedMode);
-  updateToggleIcon(savedMode);
 
-  // ----- 2. 切替ボタンの動作 -----
-  var modeToggle = document.querySelector('.mode-toggle');
-  if (modeToggle) {
-    modeToggle.addEventListener('click', function () {
-      var currentMode = document.documentElement.getAttribute('data-mode') || 'day';
-      var newMode = currentMode === 'day' ? 'night' : 'day';
+  // DOMが読み込まれたら、ボタンをセットアップ
+  document.addEventListener('DOMContentLoaded', function() {
+    var toggleBtn = document.querySelector('.mode-toggle');
+    if (!toggleBtn) return;
 
-      // モードを切り替え
-      document.documentElement.setAttribute('data-mode', newMode);
-
-      // アイコンを更新
-      updateToggleIcon(newMode);
-
-      // ユーザーの選択を保存(次回も同じモードで開ける)
-      try {
-        localStorage.setItem('chie-mode', newMode);
-      } catch (e) {
-        // プライベートブラウジングなどで保存できない場合は無視
+    // ボタンの見た目を現在のモードに合わせる
+    function updateBtnLook() {
+      var mode = document.documentElement.getAttribute('data-mode');
+      if (mode === 'night') {
+        toggleBtn.textContent = '☾';
+        toggleBtn.title = '昼モードに切り替え';
+      } else {
+        toggleBtn.textContent = '☀';
+        toggleBtn.title = '夜モードに切り替え';
       }
-    });
-  }
-
-  // ----- 3. 切替ボタンのアイコン更新 -----
-  function updateToggleIcon(mode) {
-    if (!modeToggle) return;
-    if (mode === 'night') {
-      modeToggle.textContent = '☾';  // 月
-      modeToggle.title = '昼モードに切替';
-    } else {
-      modeToggle.textContent = '☀';  // 太陽
-      modeToggle.title = '夜モードに切替';
     }
-  }
 
-  // ----- 4. スムーズスクロール -----
-  var anchorLinks = document.querySelectorAll('a[href^="#"]');
-  anchorLinks.forEach(function (link) {
-    link.addEventListener('click', function (event) {
-      var targetId = link.getAttribute('href');
-      if (targetId.length > 1) {
-        var target = document.querySelector(targetId);
-        if (target) {
-          event.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
+    updateBtnLook();
+
+    // ボタンクリックでモード切替
+    toggleBtn.addEventListener('click', function() {
+      var currentMode = document.documentElement.getAttribute('data-mode');
+      var newMode = (currentMode === 'night') ? 'day' : 'night';
+      document.documentElement.setAttribute('data-mode', newMode);
+      localStorage.setItem('wisdom-mode', newMode);
+      updateBtnLook();
     });
   });
-
-});
+})();
