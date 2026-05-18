@@ -755,6 +755,243 @@ html[data-mode="night"] .philosophy-banner-keywords span {
 }
 
 /* ============================================================
+   philosophy.html  6つの哲学カード(ハブグリッド)
+   ============================================================ */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 2.5rem auto 1rem;
+}
+
+.philosophy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.8rem 1rem;
+  background: var(--color-paper-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: var(--transition);
+  position: relative;
+  box-shadow: var(--shadow-soft);
+  min-height: 160px;
+}
+
+html[data-mode="night"] .philosophy-card {
+  background: linear-gradient(180deg, rgba(80, 140, 220, 0.10) 0%, rgba(30, 60, 130, 0.20) 100%);
+  border: 1px solid rgba(170, 200, 255, 0.25);
+  color: #e8f0ff;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--color-accent);
+}
+
+html[data-mode="night"] .philosophy-card:hover {
+  border-color: rgba(170, 200, 255, 0.6);
+  box-shadow: 0 0 20px rgba(170, 200, 255, 0.25);
+}
+
+.philosophy-card.is-coming {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.philosophy-card.is-coming:hover {
+  transform: none;
+  border-color: var(--color-border);
+}
+
+.philosophy-card-icon {
+  font-size: 38px;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.philosophy-card-name {
+  font-family: var(--font-jp);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+
+.philosophy-card-en {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-text-soft);
+  margin-bottom: 0.6rem;
+}
+
+.philosophy-card-status {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  background: rgba(155, 176, 136, 0.2);
+  color: #6a7a4a;
+}
+
+.philosophy-card.is-coming .philosophy-card-status {
+  background: rgba(168, 144, 112, 0.18);
+  color: #8a7050;
+}
+
+html[data-mode="night"] .philosophy-card-status {
+  background: rgba(170, 200, 255, 0.15);
+  color: #c8d8ff;
+}
+
+html[data-mode="night"] .philosophy-card.is-coming .philosophy-card-status {
+  background: rgba(255, 255, 255, 0.05);
+  color: #a8b0c0;
+}
+
+/* ============================================================
+   エッセイ装飾
+   ============================================================ */
+.essay-subtitle {
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text-soft);
+  letter-spacing: 0.05em;
+  margin: -0.5rem 0 0.8rem;
+}
+
+html[data-mode="night"] .essay-subtitle {
+  color: #b8c8e0;
+}
+
+/* エッセイの画像 */
+.essay-figure {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.essay-figure-single img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--color-border);
+}
+
+html[data-mode="night"] .essay-figure-single img {
+  box-shadow: 0 0 25px rgba(170, 200, 255, 0.25);
+  border: 1px solid rgba(170, 200, 255, 0.3);
+}
+
+.essay-figure-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 560px;
+  margin: 2rem auto 0.5rem;
+}
+
+.essay-figure-pair img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--color-border);
+}
+
+html[data-mode="night"] .essay-figure-pair img {
+  box-shadow: 0 0 18px rgba(170, 200, 255, 0.2);
+  border: 1px solid rgba(170, 200, 255, 0.25);
+}
+
+.essay-figure figcaption {
+  font-size: 12px;
+  color: var(--color-text-soft);
+  margin-top: 0.6rem;
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+
+.essay-figure-pair figcaption {
+  font-size: 11px;
+  margin-top: 0.4rem;
+}
+
+.essay-figure-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-text-soft);
+  font-style: italic;
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+  letter-spacing: 0.03em;
+}
+
+html[data-mode="night"] .essay-figure figcaption,
+html[data-mode="night"] .essay-figure-note {
+  color: #b8c8e0;
+}
+
+/* 余談セクション */
+.essay-aside {
+  margin: 2rem auto;
+  padding: 2rem 1.8rem;
+  background: rgba(252, 245, 227, 0.4);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 4px;
+}
+
+html[data-mode="night"] .essay-aside {
+  background: rgba(30, 60, 130, 0.15);
+  border-left: 3px solid rgba(170, 200, 255, 0.4);
+}
+
+.essay-aside-overline {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--color-text-soft);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.essay-aside-title {
+  font-family: var(--font-jp);
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 1.5rem;
+  color: var(--color-text);
+  letter-spacing: 0.08em;
+}
+
+html[data-mode="night"] .essay-aside-title {
+  color: #e8f0ff;
+}
+
+.essay-aside-subtitle {
+  font-family: var(--font-jp);
+  font-size: 16px;
+  font-weight: 500;
+  margin: 1.8rem 0 0.8rem;
+  padding-left: 0.6rem;
+  border-left: 2px solid var(--color-accent);
+  color: var(--color-text);
+}
+
+html[data-mode="night"] .essay-aside-subtitle {
+  color: #d8e0f0;
+  border-left: 2px solid rgba(170, 200, 255, 0.5);
+}
+
+/* ============================================================
    教材カード(夜はクリスタル本)
    ============================================================ */
 .book-grid {
@@ -1357,6 +1594,50 @@ html[data-mode="night"] .site-footer::before {
   .philosophy-banner-keywords span {
     font-size: 11px;
     padding: 0.3rem 0.8rem;
+  }
+
+  /* 哲学カードグリッド(スマホ) */
+  .philosophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 1.8rem auto 0.5rem;
+  }
+  .philosophy-card {
+    padding: 1.2rem 0.6rem;
+    min-height: 130px;
+  }
+  .philosophy-card-icon {
+    font-size: 30px;
+  }
+  .philosophy-card-name {
+    font-size: 15px;
+  }
+  .philosophy-card-en {
+    font-size: 10px;
+  }
+
+  /* エッセイ画像(スマホ) */
+  .essay-figure-single img {
+    max-width: 220px;
+  }
+  .essay-figure-pair {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    max-width: 100%;
+  }
+  .essay-figure-pair figcaption {
+    font-size: 10px;
+  }
+
+  /* 余談セクション(スマホ) */
+  .essay-aside {
+    padding: 1.5rem 1rem;
+  }
+  .essay-aside-title {
+    font-size: 17px;
+  }
+  .essay-aside-subtitle {
+    font-size: 15px;
   }
 
   .mode-toggle {
