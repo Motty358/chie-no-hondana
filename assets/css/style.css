@@ -912,6 +912,37 @@ html[data-mode="night"] .essay-figure-pair img {
   border: 1px solid rgba(170, 200, 255, 0.25);
 }
 
+/* 3枚並び(御朱印トリオ) */
+.essay-figure-trio {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  max-width: 720px;
+  margin: 2rem auto 0.5rem;
+}
+
+.essay-figure-trio img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--color-border);
+}
+
+html[data-mode="night"] .essay-figure-trio img {
+  box-shadow: 0 0 18px rgba(170, 200, 255, 0.2);
+  border: 1px solid rgba(170, 200, 255, 0.25);
+}
+
+.essay-figure-trio figcaption {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: var(--color-text-soft);
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+
 .essay-figure figcaption {
   font-size: 12px;
   color: var(--color-text-soft);
@@ -1627,6 +1658,16 @@ html[data-mode="night"] .site-footer::before {
   }
   .essay-figure-pair figcaption {
     font-size: 10px;
+  }
+  /* 3枚並び(スマホ):横3列キープ、文字小さく */
+  .essay-figure-trio {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    max-width: 100%;
+  }
+  .essay-figure-trio figcaption {
+    font-size: 9px;
+    margin-top: 0.3rem;
   }
 
   /* 余談セクション(スマホ) */
