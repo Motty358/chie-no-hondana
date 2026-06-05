@@ -1,50 +1,48 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- トップページ(最重要) -->
-  <url>
-    <loc>https://lampirika358.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- この図書館について -->
-  <url>
-    <loc>https://lampirika358.com/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- 父から息子へ -->
-  <url>
-    <loc>https://lampirika358.com/letter.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 父の哲学(6つのこと) -->
-  <url>
-    <loc>https://lampirika358.com/philosophy.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- 教材ページ -->
-  <url>
-    <loc>https://lampirika358.com/lessons/time-investment.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://lampirika358.com/lessons/jibun-ni-shika-dekinai-koto.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://lampirika358.com/lessons/itadakimasu.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+<!--  トップページ(最重要)  -->
+<url>
+<loc>https://lampirika358.com/</loc>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<!--  この図書館について  -->
+<url>
+<loc>https://lampirika358.com/about.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<!--  父から息子へ  -->
+<url>
+<loc>https://lampirika358.com/letter.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<!--  父の哲学(6つのこと)  -->
+<url>
+<loc>https://lampirika358.com/philosophy.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<!--  教材ページ  -->
+<url>
+<loc>https://lampirika358.com/lessons/time-investment.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://lampirika358.com/lessons/jibun-ni-shika-dekinai-koto.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://lampirika358.com/lessons/itadakimasu.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://lampirika358.com/lessons/un-wa-tsukau-tameru.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
 </urlset>
