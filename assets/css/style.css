@@ -302,29 +302,31 @@ html[data-mode="night"] body::after {
 html[data-mode="day"] .site-header-inner::before {
   content: '';
   position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 80px;
-  height: 60px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 60'%3E%3Cellipse cx='18' cy='15' rx='6' ry='11' fill='%239bb088' opacity='0.6' transform='rotate(-30 18 15)'/%3E%3Cellipse cx='28' cy='28' rx='5' ry='9' fill='%23a5b893' opacity='0.6' transform='rotate(-15 28 28)'/%3E%3Cellipse cx='38' cy='42' rx='5' ry='8' fill='%23b5c5a0' opacity='0.6' transform='rotate(20 38 42)'/%3E%3C/svg%3E");
+  top: -25px;
+  left: -20px;
+  width: 140px;
+  height: 110px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 110'><path d='M5 5 Q40 35 75 75 Q95 95 115 105' fill='none' stroke='%237e9a6b' stroke-width='2.5' opacity='0.42'/><path d='M40 28 Q60 48 72 70' fill='none' stroke='%238aa874' stroke-width='1.8' opacity='0.35'/><ellipse cx='20' cy='15' rx='7' ry='12' fill='%238fae78' opacity='0.55' transform='rotate(-35 20 15)'/><ellipse cx='42' cy='32' rx='6' ry='11' fill='%23a3bd8e' opacity='0.52' transform='rotate(-18 42 32)'/><ellipse cx='62' cy='52' rx='6.5' ry='11' fill='%23b5c9a0' opacity='0.5' transform='rotate(-42 62 52)'/><ellipse cx='82' cy='74' rx='6' ry='10' fill='%238fae78' opacity='0.46' transform='rotate(-15 82 74)'/><ellipse cx='102' cy='92' rx='5' ry='9' fill='%23a3bd8e' opacity='0.42' transform='rotate(-38 102 92)'/><ellipse cx='52' cy='40' rx='5' ry='9' fill='%23b5c9a0' opacity='0.46' transform='rotate(35 52 40)'/><ellipse cx='70' cy='62' rx='5' ry='9' fill='%238fae78' opacity='0.42' transform='rotate(28 70 62)'/><circle cx='35' cy='24' r='3.2' fill='%23c96a78' opacity='0.5'/><circle cx='90' cy='82' r='2.6' fill='%23d98a92' opacity='0.45'/></svg>");
   background-repeat: no-repeat;
+  background-size: contain;
   pointer-events: none;
   animation: leaf-sway 6s ease-in-out infinite;
-  transform-origin: bottom right;
+  transform-origin: top left;
 }
 
 html[data-mode="day"] .site-header-inner::after {
   content: '';
   position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 80px;
-  height: 60px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 60'%3E%3Cellipse cx='62' cy='15' rx='6' ry='11' fill='%239bb088' opacity='0.6' transform='rotate(30 62 15)'/%3E%3Cellipse cx='52' cy='28' rx='5' ry='9' fill='%23a5b893' opacity='0.6' transform='rotate(15 52 28)'/%3E%3Cellipse cx='42' cy='42' rx='5' ry='8' fill='%23b5c5a0' opacity='0.6' transform='rotate(-20 42 42)'/%3E%3Ccircle cx='56' cy='25' r='3' fill='%23d96a5a' opacity='0.5'/%3E%3C/svg%3E");
+  top: -25px;
+  right: -20px;
+  width: 140px;
+  height: 110px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 110'><g transform='translate(140,0) scale(-1,1)'><path d='M5 5 Q40 35 75 75 Q95 95 115 105' fill='none' stroke='%237e9a6b' stroke-width='2.5' opacity='0.42'/><path d='M40 28 Q60 48 72 70' fill='none' stroke='%238aa874' stroke-width='1.8' opacity='0.35'/><ellipse cx='20' cy='15' rx='7' ry='12' fill='%238fae78' opacity='0.55' transform='rotate(-35 20 15)'/><ellipse cx='42' cy='32' rx='6' ry='11' fill='%23a3bd8e' opacity='0.52' transform='rotate(-18 42 32)'/><ellipse cx='62' cy='52' rx='6.5' ry='11' fill='%23b5c9a0' opacity='0.5' transform='rotate(-42 62 52)'/><ellipse cx='82' cy='74' rx='6' ry='10' fill='%238fae78' opacity='0.46' transform='rotate(-15 82 74)'/><ellipse cx='102' cy='92' rx='5' ry='9' fill='%23a3bd8e' opacity='0.42' transform='rotate(-38 102 92)'/><ellipse cx='52' cy='40' rx='5' ry='9' fill='%23b5c9a0' opacity='0.46' transform='rotate(35 52 40)'/><ellipse cx='70' cy='62' rx='5' ry='9' fill='%238fae78' opacity='0.42' transform='rotate(28 70 62)'/><circle cx='35' cy='24' r='3.2' fill='%23c96a78' opacity='0.5'/><circle cx='90' cy='82' r='2.6' fill='%23d98a92' opacity='0.45'/></g></svg>");
   background-repeat: no-repeat;
+  background-size: contain;
   pointer-events: none;
   animation: leaf-sway 7s ease-in-out infinite reverse;
-  transform-origin: bottom left;
+  transform-origin: top right;
 }
 
 @keyframes leaf-sway {
@@ -1668,6 +1670,45 @@ html[data-mode="day"] .status-open {
   color: #5e7a48;
 }
 
+/* ジブリ図書館レイヤー:四隅の蔦の枝+上端の蔦+高窓の光+舞う埃 */
+html[data-mode="day"] body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 70'><path d='M0 5 Q50 2 100 5 T200 5' fill='none' stroke='%238aa874' stroke-width='2' opacity='0.35'/><path d='M35 5 Q33 22 36 38' fill='none' stroke='%238aa874' stroke-width='1.5' opacity='0.3'/><ellipse cx='33' cy='28' rx='4.5' ry='8' fill='%23a3bd8e' opacity='0.42' transform='rotate(12 33 28)'/><ellipse cx='38' cy='42' rx='4' ry='7' fill='%23b5c9a0' opacity='0.38' transform='rotate(-10 38 42)'/><path d='M85 5 Q87 14 85 24' fill='none' stroke='%238aa874' stroke-width='1.5' opacity='0.28'/><ellipse cx='86' cy='20' rx='4' ry='7' fill='%238fae78' opacity='0.4' transform='rotate(-8 86 20)'/><path d='M135 5 Q132 28 136 50' fill='none' stroke='%238aa874' stroke-width='1.5' opacity='0.3'/><ellipse cx='133' cy='30' rx='4.5' ry='8' fill='%23b5c9a0' opacity='0.4' transform='rotate(15 133 30)'/><ellipse cx='137' cy='46' rx='4' ry='7' fill='%23a3bd8e' opacity='0.36' transform='rotate(-12 137 46)'/><ellipse cx='139' cy='58' rx='3.5' ry='6' fill='%238fae78' opacity='0.32' transform='rotate(8 139 58)'/><circle cx='135' cy='38' r='2.2' fill='%23c96a78' opacity='0.35'/><path d='M175 5 Q177 12 175 20' fill='none' stroke='%238aa874' stroke-width='1.5' opacity='0.26'/><ellipse cx='176' cy='16' rx='3.5' ry='6.5' fill='%23a3bd8e' opacity='0.36' transform='rotate(-6 176 16)'/></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><path d='M8 8 Q70 50 130 130 Q160 170 185 210' fill='none' stroke='%237e9a6b' stroke-width='3' opacity='0.4'/><path d='M55 38 Q85 65 105 110' fill='none' stroke='%238aa874' stroke-width='2' opacity='0.35'/><path d='M100 95 Q130 110 160 125' fill='none' stroke='%238aa874' stroke-width='2' opacity='0.3'/><ellipse cx='30' cy='22' rx='8' ry='15' fill='%238fae78' opacity='0.5' transform='rotate(-35 30 22)'/><ellipse cx='58' cy='42' rx='7' ry='13' fill='%23a3bd8e' opacity='0.48' transform='rotate(-20 58 42)'/><ellipse cx='85' cy='68' rx='8' ry='14' fill='%23b5c9a0' opacity='0.45' transform='rotate(-45 85 68)'/><ellipse cx='112' cy='98' rx='7' ry='12' fill='%238fae78' opacity='0.42' transform='rotate(-15 112 98)'/><ellipse cx='138' cy='135' rx='8' ry='14' fill='%23a3bd8e' opacity='0.4' transform='rotate(-40 138 135)'/><ellipse cx='162' cy='172' rx='6' ry='11' fill='%23b5c9a0' opacity='0.38' transform='rotate(-18 162 172)'/><ellipse cx='180' cy='202' rx='5' ry='9' fill='%23a3bd8e' opacity='0.35' transform='rotate(-42 180 202)'/><ellipse cx='75' cy='52' rx='6' ry='11' fill='%23b5c9a0' opacity='0.42' transform='rotate(30 75 52)'/><ellipse cx='98' cy='88' rx='6' ry='10' fill='%238fae78' opacity='0.38' transform='rotate(25 98 88)'/><ellipse cx='128' cy='108' rx='6' ry='10' fill='%23a3bd8e' opacity='0.36' transform='rotate(60 128 108)'/><ellipse cx='150' cy='120' rx='5' ry='9' fill='%23b5c9a0' opacity='0.34' transform='rotate(75 150 120)'/><circle cx='48' cy='30' r='3.5' fill='%23c96a78' opacity='0.45'/><circle cx='120' cy='112' r='3' fill='%23c96a78' opacity='0.4'/><circle cx='168' cy='185' r='2.5' fill='%23d98a92' opacity='0.38'/></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><g transform='translate(240,0) scale(-1,1)'><path d='M8 8 Q70 50 130 130 Q160 170 185 210' fill='none' stroke='%237e9a6b' stroke-width='3' opacity='0.4'/><path d='M55 38 Q85 65 105 110' fill='none' stroke='%238aa874' stroke-width='2' opacity='0.35'/><path d='M100 95 Q130 110 160 125' fill='none' stroke='%238aa874' stroke-width='2' opacity='0.3'/><ellipse cx='30' cy='22' rx='8' ry='15' fill='%238fae78' opacity='0.5' transform='rotate(-35 30 22)'/><ellipse cx='58' cy='42' rx='7' ry='13' fill='%23a3bd8e' opacity='0.48' transform='rotate(-20 58 42)'/><ellipse cx='85' cy='68' rx='8' ry='14' fill='%23b5c9a0' opacity='0.45' transform='rotate(-45 85 68)'/><ellipse cx='112' cy='98' rx='7' ry='12' fill='%238fae78' opacity='0.42' transform='rotate(-15 112 98)'/><ellipse cx='138' cy='135' rx='8' ry='14' fill='%23a3bd8e' opacity='0.4' transform='rotate(-40 138 135)'/><ellipse cx='162' cy='172' rx='6' ry='11' fill='%23b5c9a0' opacity='0.38' transform='rotate(-18 162 172)'/><ellipse cx='180' cy='202' rx='5' ry='9' fill='%23a3bd8e' opacity='0.35' transform='rotate(-42 180 202)'/><ellipse cx='75' cy='52' rx='6' ry='11' fill='%23b5c9a0' opacity='0.42' transform='rotate(30 75 52)'/><ellipse cx='98' cy='88' rx='6' ry='10' fill='%238fae78' opacity='0.38' transform='rotate(25 98 88)'/><ellipse cx='128' cy='108' rx='6' ry='10' fill='%23a3bd8e' opacity='0.36' transform='rotate(60 128 108)'/><ellipse cx='150' cy='120' rx='5' ry='9' fill='%23b5c9a0' opacity='0.34' transform='rotate(75 150 120)'/><circle cx='48' cy='30' r='3.5' fill='%23c96a78' opacity='0.45'/><circle cx='120' cy='112' r='3' fill='%23c96a78' opacity='0.4'/><circle cx='168' cy='185' r='2.5' fill='%23d98a92' opacity='0.38'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><g transform='translate(0,240) scale(1,-1)'><path d='M8 8 Q70 50 130 130 Q160 170 185 210' fill='none' stroke='%237e9a6b' stroke-width='3' opacity='0.4'/><path d='M55 38 Q85 65 105 110' fill='none' stroke='%238aa874' stroke-width='2' opacity='0.35'/><path d='M100 95 Q130 110 160 125' fill='none' stroke='%238aa874' stroke-width='2' opacity='0.3'/><ellipse cx='30' cy='22' rx='8' ry='15' fill='%238fae78' opacity='0.5' transform='rotate(-35 30 22)'/><ellipse cx='58' cy='42' rx='7' ry='13' fill='%23a3bd8e' opacity='0.48' transform='rotate(-20 58 42)'/><ellipse cx='85' cy='68' rx='8' ry='14' fill='%23b5c9a0' opacity='0.45' transform='rotate(-45 85 68)'/><ellipse cx='112' cy='98' rx='7' ry='12' fill='%238fae78' opacity='0.42' transform='rotate(-15 112 98)'/><ellipse cx='138' cy='135' rx='8' ry='14' fill='%23a3bd8e' opacity='0.4' transform='rotate(-40 138 135)'/><ellipse cx='162' cy='172' rx='6' ry='11' fill='%23b5c9a0' opacity='0.38' transform='rotate(-18 162 172)'/><ellipse cx='180' cy='202' rx='5' ry='9' fill='%23a3bd8e' opacity='0.35' transform='rotate(-42 180 202)'/><ellipse cx='75' cy='52' rx='6' ry='11' fill='%23b5c9a0' opacity='0.42' transform='rotate(30 75 52)'/><ellipse cx='98' cy='88' rx='6' ry='10' fill='%238fae78' opacity='0.38' transform='rotate(25 98 88)'/><ellipse cx='128' cy='108' rx='6' ry='10' fill='%23a3bd8e' opacity='0.36' transform='rotate(60 128 108)'/><ellipse cx='150' cy='120' rx='5' ry='9' fill='%23b5c9a0' opacity='0.34' transform='rotate(75 150 120)'/><circle cx='48' cy='30' r='3.5' fill='%23c96a78' opacity='0.45'/><circle cx='120' cy='112' r='3' fill='%23c96a78' opacity='0.4'/><circle cx='168' cy='185' r='2.5' fill='%23d98a92' opacity='0.38'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><g transform='translate(240,240) scale(-1,-1)'><path d='M8 8 Q70 50 130 130 Q160 170 185 210' fill='none' stroke='%237e9a6b' stroke-width='3' opacity='0.4'/><path d='M55 38 Q85 65 105 110' fill='none' stroke='%238aa874' stroke-width='2' opacity='0.35'/><path d='M100 95 Q130 110 160 125' fill='none' stroke='%238aa874' stroke-width='2' opacity='0.3'/><ellipse cx='30' cy='22' rx='8' ry='15' fill='%238fae78' opacity='0.5' transform='rotate(-35 30 22)'/><ellipse cx='58' cy='42' rx='7' ry='13' fill='%23a3bd8e' opacity='0.48' transform='rotate(-20 58 42)'/><ellipse cx='85' cy='68' rx='8' ry='14' fill='%23b5c9a0' opacity='0.45' transform='rotate(-45 85 68)'/><ellipse cx='112' cy='98' rx='7' ry='12' fill='%238fae78' opacity='0.42' transform='rotate(-15 112 98)'/><ellipse cx='138' cy='135' rx='8' ry='14' fill='%23a3bd8e' opacity='0.4' transform='rotate(-40 138 135)'/><ellipse cx='162' cy='172' rx='6' ry='11' fill='%23b5c9a0' opacity='0.38' transform='rotate(-18 162 172)'/><ellipse cx='180' cy='202' rx='5' ry='9' fill='%23a3bd8e' opacity='0.35' transform='rotate(-42 180 202)'/><ellipse cx='75' cy='52' rx='6' ry='11' fill='%23b5c9a0' opacity='0.42' transform='rotate(30 75 52)'/><ellipse cx='98' cy='88' rx='6' ry='10' fill='%238fae78' opacity='0.38' transform='rotate(25 98 88)'/><ellipse cx='128' cy='108' rx='6' ry='10' fill='%23a3bd8e' opacity='0.36' transform='rotate(60 128 108)'/><ellipse cx='150' cy='120' rx='5' ry='9' fill='%23b5c9a0' opacity='0.34' transform='rotate(75 150 120)'/><circle cx='48' cy='30' r='3.5' fill='%23c96a78' opacity='0.45'/><circle cx='120' cy='112' r='3' fill='%23c96a78' opacity='0.4'/><circle cx='168' cy='185' r='2.5' fill='%23d98a92' opacity='0.38'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' preserveAspectRatio='xMidYMid slice'><defs><linearGradient id='beam' x1='0' y1='0' x2='0.35' y2='1'><stop offset='0' stop-color='%23fff3d6' stop-opacity='0.32'/><stop offset='0.5' stop-color='%23fff3d6' stop-opacity='0.13'/><stop offset='1' stop-color='%23fff3d6' stop-opacity='0'/></linearGradient></defs><polygon points='280,0 460,0 920,800 700,800' fill='url(%23beam)'/><polygon points='540,0 620,0 1080,800 990,800' fill='url(%23beam)' opacity='0.55'/><circle cx='350' cy='180' r='2.5' fill='%23fff6dd' opacity='0.6'/><circle cx='420' cy='320' r='1.8' fill='%23fff6dd' opacity='0.5'/><circle cx='510' cy='240' r='2.2' fill='%23ffeec8' opacity='0.55'/><circle cx='580' cy='420' r='1.5' fill='%23fff6dd' opacity='0.45'/><circle cx='660' cy='310' r='2' fill='%23ffeec8' opacity='0.5'/><circle cx='730' cy='520' r='1.8' fill='%23fff6dd' opacity='0.42'/><circle cx='800' cy='400' r='2.4' fill='%23fff6dd' opacity='0.48'/><circle cx='460' cy='550' r='1.5' fill='%23ffeec8' opacity='0.4'/><circle cx='880' cy='620' r='1.8' fill='%23fff6dd' opacity='0.38'/><circle cx='620' cy='640' r='2' fill='%23ffeec8' opacity='0.36'/><circle cx='390' cy='460' r='1.4' fill='%23fff6dd' opacity='0.42'/><circle cx='940' cy='280' r='1.6' fill='%23ffeec8' opacity='0.4'/></svg>");
+  background-repeat: repeat-x, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: top center, -30px -30px, calc(100% + 30px) -30px, -35px calc(100% + 35px), calc(100% + 35px) calc(100% + 35px), center;
+  background-size: 200px 70px, 240px 240px, 240px 240px, 240px 240px, 240px 240px, cover;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 章見出しの上に小枝の飾り */
+html[data-mode="day"] .section-chapter {
+  position: relative;
+}
+
+html[data-mode="day"] .section-chapter::before {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 26px;
+  margin: 0 auto 0.4rem;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 26'><path d='M20 13 Q60 9 100 13' fill='none' stroke='%238aa874' stroke-width='1.5' opacity='0.45'/><ellipse cx='34' cy='10' rx='4' ry='7' fill='%23a3bd8e' opacity='0.5' transform='rotate(-55 34 10)'/><ellipse cx='50' cy='15' rx='4' ry='7' fill='%23b5c9a0' opacity='0.48' transform='rotate(55 50 15)'/><ellipse cx='70' cy='9' rx='4' ry='7' fill='%238fae78' opacity='0.48' transform='rotate(-55 70 9)'/><ellipse cx='86' cy='15' rx='4' ry='7' fill='%23a3bd8e' opacity='0.46' transform='rotate(55 86 15)'/><circle cx='60' cy='12' r='2.5' fill='%23c96a78' opacity='0.5'/></svg>");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 /* 英字サブタイトルにセリフ体の優雅さを */
 html[data-mode="day"] .article-title-en,
 html[data-mode="day"] .book-title-en,
@@ -1792,6 +1833,22 @@ html[data-mode="day"] .philosophy-card-en {
   }
   .essay-aside-subtitle {
     font-size: 15px;
+  }
+
+  /* ジブリ図書館レイヤー(スマホ:枝と蔦を小さく) */
+  html[data-mode="day"] body::after {
+    background-size: 140px 49px, 130px 130px, 130px 130px, 130px 130px, 130px 130px, cover;
+    background-position: top center, -18px -18px, calc(100% + 18px) -18px, -20px calc(100% + 20px), calc(100% + 20px) calc(100% + 20px), center;
+  }
+  html[data-mode="day"] .site-header-inner::before,
+  html[data-mode="day"] .site-header-inner::after {
+    width: 90px;
+    height: 70px;
+    top: -18px;
+  }
+  html[data-mode="day"] .section-chapter::before {
+    width: 95px;
+    height: 21px;
   }
 
   .mode-toggle {
