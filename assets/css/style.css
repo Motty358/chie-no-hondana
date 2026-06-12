@@ -1,5 +1,8 @@
+/* Google Fonts: 優雅な筆記体(昼モードのティーガーデン用) */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Cormorant+Garamond:wght@400;500&display=swap');
+
 /* ============================================================
-   人生の知恵の本棚  共通スタイル(style.css)  v3 夜モード強化版
+   人生の知恵の本棚  共通スタイル(style.css)  v4 ティーガーデン昼モード
    ----------------------------------------------------------
    昼モード:ヴィンテージ・ライブラリー(default)
    夜モード:エンジェリック・アーカイブ(神秘的な近未来)
@@ -10,35 +13,42 @@
    ============================================================ */
 :root,
 html[data-mode="day"] {
-  --color-bg-1:       #f5f0e3;
-  --color-bg-2:       #ede5d3;
-  --color-paper:      #fffcf5;
-  --color-paper-soft: rgba(255, 252, 245, 0.7);
+  /* ストロベリー・アフタヌーンティー パレット */
+  --color-bg-1:       #faf6ec;   /* クリーム(生成り) */
+  --color-bg-2:       #f3e9da;   /* 温かいピーチベージュ */
+  --color-paper:      #fffdf8;
+  --color-paper-soft: rgba(255, 253, 248, 0.78);
 
-  --color-text:       #5a4a32;
-  --color-text-soft:  #7a6a4a;
+  --color-text:       #5a4d3a;
+  --color-text-soft:  #7d6e55;
   --color-muted:      #8a7a5a;
 
-  --color-accent:     #d96a5a;
-  --color-leaf:       #9bb088;
-  --color-leaf-dark:  #7a8a6a;
+  --color-accent:     #d97a72;   /* ストロベリーコーラル */
+  --color-leaf:       #a3bd8e;   /* セージグリーン */
+  --color-leaf-dark:  #7e9a6b;
 
   --color-wood:       #a08560;
   --color-wood-dark:  #7a5a3a;
 
-  --color-border:        rgba(140, 120, 80, 0.2);
-  --color-border-strong: rgba(140, 120, 80, 0.4);
+  /* セージ系の追加色 */
+  --color-sage-bg:    rgba(225, 235, 209, 0.75);   /* カード用淡セージ */
+  --color-sage-deep:  rgba(206, 222, 184, 0.85);
+  --color-sage-line:  rgba(150, 175, 125, 0.4);
+  --color-berry:      #c96a78;   /* ストロベリーピンク */
+
+  --color-border:        rgba(150, 160, 110, 0.25);
+  --color-border-strong: rgba(150, 160, 110, 0.45);
   --color-coming:        rgba(140, 120, 80, 0.3);
 
-  --shadow-soft:  0 2px 8px rgba(120, 100, 60, 0.08);
-  --shadow-card:  0 4px 12px rgba(120, 100, 60, 0.12);
-  --shadow-hover: 0 8px 16px rgba(120, 100, 60, 0.18);
+  --shadow-soft:  0 2px 10px rgba(140, 130, 90, 0.08);
+  --shadow-card:  0 5px 16px rgba(140, 130, 90, 0.13);
+  --shadow-hover: 0 9px 20px rgba(140, 130, 90, 0.18);
 
-  --color-title:      #5a4a32;
-  --color-title-soft: #7a6a4a;
+  --color-title:      #6b5a40;
+  --color-title-soft: #7d6e55;
 
-  --letter-line: rgba(140, 120, 80, 0.08);
-  --letter-bg:   #fcf5e3;
+  --letter-line: rgba(150, 160, 110, 0.1);
+  --letter-bg:   #fbf5e8;
 }
 
 /* ============================================================
@@ -82,7 +92,8 @@ html[data-mode="night"] {
 :root {
   --radius:      6px;
   --radius-lg:   10px;
-  --font-script: 'Brush Script MT', 'Snell Roundhand', 'Apple Chancery', cursive;
+  --font-script: 'Dancing Script', 'Brush Script MT', 'Snell Roundhand', 'Apple Chancery', cursive;
+  --font-jp:     'Hiragino Mincho ProN', 'Yu Mincho', '游明朝', 'Noto Serif JP', serif;
   --font-serif:  'Hiragino Mincho ProN', 'Yu Mincho', '游明朝', 'Noto Serif JP', serif;
   --font-sans:   'Hiragino Sans', 'Yu Gothic', '游ゴシック', 'Noto Sans JP', sans-serif;
 }
@@ -106,9 +117,12 @@ body {
   transition: background 0.8s ease, color 0.8s ease;
 }
 
-/* 昼モードの背景 */
+/* 昼モードの背景:クリーム→ピーチの水彩グラデーション */
 html[data-mode="day"] body {
-  background: linear-gradient(180deg, var(--color-bg-1) 0%, var(--color-bg-2) 100%);
+  background:
+    radial-gradient(ellipse at 85% 8%, rgba(231, 240, 218, 0.55) 0%, transparent 45%),
+    radial-gradient(ellipse at 8% 90%, rgba(238, 218, 200, 0.45) 0%, transparent 45%),
+    linear-gradient(160deg, var(--color-bg-1) 0%, var(--color-bg-2) 100%);
   background-attachment: fixed;
 }
 
@@ -122,7 +136,7 @@ html[data-mode="night"] body {
   background-attachment: fixed;
 }
 
-/* 昼モード:葉っぱの薄い影 */
+/* 昼モード:水彩スプラッター(ピンクの飛沫)+セージの淡い雲 */
 html[data-mode="day"] body::before {
   content: '';
   position: fixed;
@@ -131,8 +145,22 @@ html[data-mode="day"] body::before {
   right: 0;
   bottom: 0;
   background-image:
-    radial-gradient(ellipse at 10% 0%, rgba(180, 200, 170, 0.15) 0%, transparent 40%),
-    radial-gradient(ellipse at 90% 100%, rgba(220, 200, 170, 0.12) 0%, transparent 40%);
+    /* ピンクの水彩飛沫(小さなドット) */
+    radial-gradient(circle 4px at 12% 18%, rgba(222, 138, 138, 0.30) 0%, transparent 100%),
+    radial-gradient(circle 2px at 16% 22%, rgba(222, 138, 138, 0.25) 0%, transparent 100%),
+    radial-gradient(circle 3px at 85% 12%, rgba(226, 152, 142, 0.28) 0%, transparent 100%),
+    radial-gradient(circle 2px at 89% 16%, rgba(226, 152, 142, 0.20) 0%, transparent 100%),
+    radial-gradient(circle 5px at 78% 55%, rgba(222, 138, 138, 0.18) 0%, transparent 100%),
+    radial-gradient(circle 2px at 74% 58%, rgba(222, 138, 138, 0.22) 0%, transparent 100%),
+    radial-gradient(circle 3px at 22% 72%, rgba(226, 152, 142, 0.22) 0%, transparent 100%),
+    radial-gradient(circle 2px at 26% 76%, rgba(226, 152, 142, 0.18) 0%, transparent 100%),
+    radial-gradient(circle 4px at 55% 90%, rgba(222, 138, 138, 0.18) 0%, transparent 100%),
+    radial-gradient(circle 2px at 59% 87%, rgba(222, 138, 138, 0.22) 0%, transparent 100%),
+    radial-gradient(circle 3px at 42% 8%, rgba(222, 138, 138, 0.20) 0%, transparent 100%),
+    /* セージグリーンの淡い水彩雲 */
+    radial-gradient(ellipse at 5% 10%, rgba(180, 205, 155, 0.22) 0%, transparent 38%),
+    radial-gradient(ellipse at 95% 92%, rgba(180, 205, 155, 0.18) 0%, transparent 38%),
+    radial-gradient(ellipse at 92% 35%, rgba(225, 200, 175, 0.18) 0%, transparent 35%);
   pointer-events: none;
   z-index: 0;
 }
@@ -652,17 +680,14 @@ html[data-mode="night"] .category-icon {
 
 /* ------ 3×3グリッド (本棚一覧専用) ------ */
 .category-grid-3x3 {
-  /* デスクトップ:3列固定 */
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  /* 中央寄り感を出さないため、余白を活かしてカード自体に存在感を */
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .category-grid-3x3 .category-card {
-  /* カードを少し大きめに、ゆったりさせる */
   padding: 1.6rem 0.8rem;
   min-height: 120px;
 }
@@ -776,7 +801,7 @@ html[data-mode="night"] .philosophy-banner-keywords span {
   border-radius: var(--radius);
   text-decoration: none;
   color: var(--color-text);
-  transition: var(--transition);
+  transition: all 0.3s ease;
   position: relative;
   box-shadow: var(--shadow-soft);
   min-height: 160px;
@@ -790,7 +815,7 @@ html[data-mode="night"] .philosophy-card {
 
 .philosophy-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-card);
   border-color: var(--color-accent);
 }
 
@@ -871,7 +896,6 @@ html[data-mode="night"] .essay-subtitle {
   color: #b8c8e0;
 }
 
-/* エッセイの画像 */
 .essay-figure {
   margin: 2rem auto;
   text-align: center;
@@ -1563,6 +1587,95 @@ html[data-mode="night"] .site-footer::before {
 /* ============================================================
    スマホ対応
    ============================================================ */
+/* ============================================================
+   昼モード:ストロベリー・ティーガーデン強化
+   (夜モードには一切影響しない昼専用オーバーライド)
+   ============================================================ */
+
+/* 筆記体タイトルを優雅に(Dancing Script) */
+html[data-mode="day"] .site-title {
+  font-weight: 500;
+  color: #6b5440;
+}
+
+html[data-mode="day"] .section-chapter-title {
+  font-weight: 500;
+  color: #74604a;
+}
+
+/* オーバーライン(CHAPTERなど)をメニューの見出し風に */
+html[data-mode="day"] .section-chapter-overline,
+html[data-mode="day"] .article-overline,
+html[data-mode="day"] .philosophy-banner-overline {
+  letter-spacing: 0.35em;
+  color: #a08a68;
+}
+
+/* カテゴリーカード:淡いセージグリーンのパネル */
+html[data-mode="day"] .category-card {
+  background: linear-gradient(170deg, rgba(233, 241, 220, 0.88) 0%, rgba(216, 230, 197, 0.82) 100%);
+  border: 1px solid var(--color-sage-line);
+}
+
+html[data-mode="day"] .category-card:hover {
+  background: linear-gradient(170deg, rgba(238, 245, 227, 0.95) 0%, rgba(222, 235, 204, 0.9) 100%);
+  border-color: var(--color-accent);
+}
+
+/* 哲学カード:同じくセージパネル */
+html[data-mode="day"] .philosophy-card {
+  background: linear-gradient(170deg, rgba(233, 241, 220, 0.85) 0%, rgba(218, 231, 200, 0.8) 100%);
+  border: 1px solid var(--color-sage-line);
+}
+
+html[data-mode="day"] .philosophy-card:hover {
+  border-color: var(--color-accent);
+}
+
+/* 教材カード:クリームの紙にセージの縁 */
+html[data-mode="day"] .book-card {
+  background: linear-gradient(175deg, rgba(255, 253, 247, 0.92) 0%, rgba(244, 247, 234, 0.88) 100%);
+  border: 1px solid var(--color-sage-line);
+}
+
+/* 哲学バナー:水彩クリーム+セージ縁+ベリーアクセント */
+html[data-mode="day"] .philosophy-banner {
+  background:
+    radial-gradient(ellipse at 90% 10%, rgba(228, 240, 213, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at 8% 92%, rgba(245, 226, 212, 0.5) 0%, transparent 50%),
+    rgba(255, 253, 248, 0.85);
+  border: 1px solid var(--color-sage-line);
+}
+
+html[data-mode="day"] .philosophy-banner-keywords span {
+  background: rgba(233, 241, 220, 0.7);
+  border: 1px solid var(--color-sage-line);
+}
+
+html[data-mode="day"] .philosophy-banner-keywords span:hover {
+  border-color: var(--color-accent);
+}
+
+/* 区切りの❦マークをベリー色に */
+html[data-mode="day"] .divider-mark {
+  color: var(--color-berry);
+  opacity: 0.7;
+}
+
+/* ステータスバッジ:公開中をセージに */
+html[data-mode="day"] .status-open {
+  background: rgba(163, 189, 142, 0.25);
+  color: #5e7a48;
+}
+
+/* 英字サブタイトルにセリフ体の優雅さを */
+html[data-mode="day"] .article-title-en,
+html[data-mode="day"] .book-title-en,
+html[data-mode="day"] .philosophy-card-en {
+  font-family: 'Cormorant Garamond', var(--font-serif);
+  letter-spacing: 0.18em;
+}
+
 @media (max-width: 600px) {
   body { font-size: 15px; }
   .site-header { padding: 3rem 0 1.5rem; }
