@@ -10,7 +10,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>いただきますの本当の意味｜人生の知恵の本棚</title>
   <meta name="description" content="一杯のごはんから、世界を見つめなおす。宇宙のつながり、母さんの時間、命の重み。「いただきます」の六文字は、きみと世界を深くつないでいる。父から、きみへ伝える、感謝の意味。">
-  <!-- OGP (SNSでシェアされた時の表示) -->
   <meta property="og:title" content="いただきますの本当の意味｜人生の知恵の本棚">
   <meta property="og:description" content="一杯のごはんから、世界を見つめなおす。宇宙のつながり、母さんの時間、命の重み。「いただきます」の六文字は、きみと世界を深くつないでいる。父から、きみへ伝える、感謝の意味。">
   <meta property="og:type" content="website">
@@ -167,10 +166,26 @@
         <li>食べたものを、最後の一片まで丁寧に味わう</li>
       </ul>
 
-      <p style="margin-top: 2rem; text-align: center;">
-        <a class="btn btn-secondary" href="../assets/pdf/itadakimasu.pdf" target="_blank" rel="noopener">図解スライドPDFを見る</a>
-        <a class="btn btn-secondary" href="../assets/pdf/itadakimasu_from_father.pdf" target="_blank" rel="noopener">手紙PDFを読む</a>
-      </p>
+      <!-- PDF埋め込みビューア(ダウンロードリンク廃止・2枚) -->
+      <div class="pdf-viewer-wrap">
+        <p class="pdf-viewer-label">
+          📄 図解スライドPDF(埋め込み表示)
+          <span class="pdf-viewer-note">保存・転載はご遠慮ください</span>
+        </p>
+        <div class="pdf-viewer-frame is-slide">
+          <iframe src="../assets/pdf/itadakimasu.pdf#toolbar=0&navpanes=0&scrollbar=0" title="いただきますの本当の意味 図解スライドPDF" loading="lazy" oncontextmenu="return false;"></iframe>
+        </div>
+      </div>
+
+      <div class="pdf-viewer-wrap">
+        <p class="pdf-viewer-label">
+          📄 手紙PDF(埋め込み表示)
+          <span class="pdf-viewer-note">保存・転載はご遠慮ください</span>
+        </p>
+        <div class="pdf-viewer-frame">
+          <iframe src="../assets/pdf/itadakimasu_from_father.pdf#toolbar=0&navpanes=0&scrollbar=0" title="いただきますの本当の意味 手紙PDF" loading="lazy" oncontextmenu="return false;"></iframe>
+        </div>
+      </div>
 
       <section class="message-box" style="margin-top: 3rem;">
         <h3 class="message-box-title">From father</h3>
