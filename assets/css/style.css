@@ -1884,3 +1884,80 @@ html[data-mode="day"] .philosophy-card-en {
     top: 20px;
   }
 }
+
+
+/* ============================================================
+   PDF埋め込みビューア(ダウンロードリンクを廃止し、その場で閲覧のみ)
+   ============================================================ */
+.pdf-viewer-wrap {
+  margin: 2.5rem auto;
+  max-width: 640px;
+}
+
+.pdf-viewer-label {
+  font-size: 13px;
+  color: var(--color-text-soft);
+  text-align: center;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+.pdf-viewer-label .pdf-viewer-note {
+  display: block;
+  font-size: 11px;
+  opacity: 0.75;
+  margin-top: 0.2rem;
+}
+
+.pdf-viewer-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 141.4%; /* A4縦比率 */
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  background: #f4f0e6;
+}
+
+.pdf-viewer-frame.is-slide {
+  padding-top: 56.25%; /* 16:9スライド比率 */
+}
+
+.pdf-viewer-frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 右クリック等の操作感を軽く抑止するオーバーレイ用のクラス(必要に応じてJSで付与) */
+.pdf-viewer-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+html[data-mode="night"] .pdf-viewer-frame {
+  background: rgba(20, 30, 60, 0.4);
+  border: 1px solid rgba(170, 200, 255, 0.25);
+}
+
+html[data-mode="night"] .pdf-viewer-label {
+  color: #b8c8e0;
+}
+
+@media (max-width: 600px) {
+  .pdf-viewer-wrap {
+    max-width: 100%;
+  }
+  .pdf-viewer-frame {
+    padding-top: 130%;
+  }
+  .pdf-viewer-frame.is-slide {
+    padding-top: 62%;
+  }
+}
